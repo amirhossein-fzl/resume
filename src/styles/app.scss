@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './fonts.scss';
+
+body {
+    @apply font-[IRANSans] bg-white dark:bg-slate-900;
+    @apply text-slate-900 text-base;
+}
