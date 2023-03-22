@@ -2,6 +2,7 @@
     import Icon from '../Icon.svelte';
     import { _ } from 'svelte-i18n';
     import { fade, scale } from 'svelte/transition';
+    import GithubIcon from '@/svg/icons/github.svg?raw';
     import InstagramIcon from '@/svg/icons/instagram.svg?raw';
     import LinkedinIcon from '@/svg/icons/linkedin.svg?raw';
     import TelegramIcon from '@/svg/icons/telegram.svg?raw';
@@ -42,6 +43,10 @@
 
                 <a href="https://twitter.com/amirhossein_fzl/" target="_blank">
                     <Icon icon={TwitterIcon} size={28} stroke="" />
+                </a>
+                
+                <a href="https://github.com/amirhossein-fzl/" target="_blank">
+                    <Icon icon={GithubIcon} size={28} stroke="" />
                 </a>
             </div>
         </div>
@@ -93,9 +98,17 @@
         @apply m-auto z-20 absolute w-96 h-auto inset-0;
     }
 
+    :global(.github-icon) {
+        @apply fill-black;
+    }
+
     :global(.dark) {
         .job {
             @apply text-slate-400;
+        }
+
+        :global(.github-icon) {
+            @apply fill-white;
         }
     }
 </style>
