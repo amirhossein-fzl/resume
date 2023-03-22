@@ -3,5 +3,10 @@
     "persian": "Persian",
     "name": "Amirhossein Fazli",
     "job": "Full-stack programmer",
-    "short_description": "I am a Full-stack programmer and I am ready to implement your business idea!"
+    "short_description": "I am a Full-stack programmer and I am ready to implement your business idea!",
+    "about_me": "About me",
+    "my_skills": "My skills",
+    "my_services": "My services",
+    "my_portfolios": "My portfolios",
+    "contact_me": "Contact me"
 }
