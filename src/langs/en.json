@@ -8,5 +8,19 @@
     "my_skills": "My skills",
     "my_services": "My services",
     "my_portfolios": "My portfolios",
-    "contact_me": "Contact me"
+    "contact_me": "Contact me",
+    "about-1": "I have started learning programming professionally since 2018 and I am still continuing and this cycle continues to infinity ...",
+    "about-2": "In the beginning, I was trained with online courses (video trainings)...but later I was not limited to this source and I use all sources, including videos, texts, documents, videos, blogs, books, etc. ...",
+    "about-3": "I love programming in Rust. And I would like the backend of the websites I write to be in this language ... this language is wonderful!",
+    "about-4": "I like the open source world very much. I love Linux and I program with Linux ... because it gives me more freedom ...",
+    "fullname": "Fullname",
+    "age": "Age",
+    "country": "Country",
+    "my_country": "Iran",
+    "city": "City",
+    "my_city": "east-azarbijan - Marand",
+    "address": "Address",
+    "my_address": "bonab-e-jadid - Imam St. - Bakhshemandi alley - first ten meters - Fazli house",
+    "status": "Status",
+    "my_status": "Ready"
 }

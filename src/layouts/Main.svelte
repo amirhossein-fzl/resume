@@ -8,11 +8,18 @@
     <Navbar />
     <Header />
     <Navigation />
-    <slot></slot>
+
+    <div class="page-container">
+        <slot />
+    </div>
 </div>
 
 <style lang="scss">
     .container {
         @apply px-5 py-5 max-w-full;
+    }
+
+    .page-container {
+        @apply mt-10 md:container;
     }
 </style>
