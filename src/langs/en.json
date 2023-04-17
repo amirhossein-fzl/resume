@@ -91,5 +91,17 @@
     "wasm": {
         "title": "WebAssembly",
         "value": "WebAssembly is a low-level language that runs in a binary format in the browser ... one of the distinctive features of this language is its speed ... I write the front-end code of the website with the Rust language and the output from it I get WebAssembly ..."
+    },
+    "front-end": {
+        "label": "Front-end",
+        "description": "We will design your website template in a responsive and user-friendly way with your desired features ..."
+    },
+    "back-end": {
+        "label": "Back-end",
+        "description": "We make the core and brain of your website with the format you like, in a scalable and efficient way ..."
+    },
+    "telegram-bot": {
+        "label": "Telegram bot",
+        "description": "We design functional and customized robots according to your needs using the best methods of robot development ..."
     }
 }
