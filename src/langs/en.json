@@ -103,5 +103,11 @@
     "telegram-bot": {
         "label": "Telegram bot",
         "description": "We design functional and customized robots according to your needs using the best methods of robot development ..."
-    }
+    },
+    "education": "Education",
+    "diploma": {
+        "label": "Diploma",
+        "description": "I received my diploma from Shahid Beheshti School in Marand city in the field of mathematics and physics ..."
+    },
+    "2023": "2023"
 }
