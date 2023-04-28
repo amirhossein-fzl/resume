@@ -109,5 +109,24 @@
         "label": "Diploma",
         "description": "I received my diploma from Shahid Beheshti School in Marand city in the field of mathematics and physics ..."
     },
-    "2023": "2023"
+    "2023": "2023",
+    "validation-errors": {
+        "name": {
+            "required": "The name field is required!"
+        },
+        "email": {
+            "required": "The Email field is required!",
+            "invalid": "The email is invalid!"
+        },
+        "email_or_phone": "The email or phone number is required!",
+        "phone": {
+            "required": "The phone number field is required!"
+        },
+        "message": {
+            "required": "The message field is required!"
+        }
+    },
+    "contact_form": {
+        "not_working": "Our contact form is not working at the moment ... contact us in other ways ..."
+    }
 }
