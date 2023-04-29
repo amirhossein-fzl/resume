@@ -129,10 +129,10 @@
 <style lang="scss">
     .row {
         // @apply grid grid-cols-2 gap-6;
-        @apply flex flex-wrap w-full -mx-3;
+        @apply flex flex-wrap w-full;
         .item {
-            @apply max-w-full w-6/12 flex-auto px-6 h-fit;
-            @apply flex flex-col gap-10;
+            @apply max-w-full w-full flex-auto px-6 h-fit;
+            @apply flex flex-col gap-10 lg:w-6/12;
         }
     }
 

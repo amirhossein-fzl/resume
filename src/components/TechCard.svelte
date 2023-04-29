@@ -20,7 +20,12 @@
 
 <style lang="scss">
     :global(.tech-box) {
-        @apply px-4 py-2 rounded-2xl flex items-center gap-4;
+        @apply px-4 py-2 rounded-2xl flex flex-col items-center gap-4;
+        @apply sm:flex-row;
+    }
+
+    .info {
+        @apply text-center sm:text-start;
     }
 
     .title {
