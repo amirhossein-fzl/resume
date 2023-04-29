@@ -98,7 +98,7 @@
     };
 </script>
 
-<div class="row grid-cols-2">
+<div class="row main-row">
     <div class="item">
         <Card class="c-card">
             {#if status.show}
@@ -154,7 +154,7 @@
                     </div>
                 </div>
 
-                <div class="row grid-cols-2">
+                <div class="row mail-phone-row">
                     <div class="input">
                         <label for="email">{$_('email')}</label>
                         <input
@@ -307,6 +307,19 @@
 <style lang="scss">
     .row {
         @apply grid gap-6;
+    }
+
+    .main-row {
+        @apply min-[960px]:grid-cols-2;
+        .item {
+            &:first-child {
+                @apply order-last min-[960px]:order-first;
+            }
+        }
+    }
+
+    .mail-phone-row {
+        @apply sm:grid-cols-2;
     }
 
     :global(.c-card) {
