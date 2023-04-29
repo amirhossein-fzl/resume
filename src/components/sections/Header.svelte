@@ -67,7 +67,9 @@
     }
 
     .my {
-        @apply flex flex-col md:flex-row justify-center mt-20 gap-8 items-center w-6/12;
+        @apply flex flex-col md:flex-row justify-center mt-20 gap-8 items-center;
+        // @apply min-[998px]:w-6/12 w-7/12;
+        @apply w-8/12 lg:w-6/12;
     }
 
     .profile {
