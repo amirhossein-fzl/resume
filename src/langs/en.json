@@ -1,7 +1,7 @@
 {
     "english": "English",
     "persian": "Persian",
-    "name": "Amirhossein Fazli",
+    "my_name": "Amirhossein Fazli",
     "job": "Full-stack programmer",
     "short_description": "I am a Full-stack programmer and I am ready to implement your business idea!",
     "about_me": "About me",
@@ -126,6 +126,12 @@
             "required": "The message field is required!"
         }
     },
+    "fill_form_or_other_ways": "Fill out the form or use the communication methods below to contact me ...",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "message": "Message",
+    "send_message": "Send Message",
     "contact_form": {
         "not_working": "Our contact form is not working at the moment ... contact us in other ways ..."
     }

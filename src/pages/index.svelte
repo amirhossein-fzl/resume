@@ -38,7 +38,7 @@
             <ul>
                 <li>
                     <span class="title">{$_('fullname')}</span>
-                    <span class="value">{$_('name')}</span>
+                    <span class="value">{$_('my_name')}</span>
                 </li>
                 <li>
                     <span class="title">{$_('age')}</span>
@@ -135,7 +135,7 @@
         :global(.qoute-box) {
             &::before {
                 right: unset;
-                @apply -left-1.5;
+                @apply -left-1.5 border-l border-b border-r-0 border-t-0;
             }
         }
     }

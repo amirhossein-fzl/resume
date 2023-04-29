@@ -134,7 +134,7 @@
                 />
                 <div class="row">
                     <div class="input">
-                        <label for="name">Name</label>
+                        <label for="name">{$_('name')}</label>
                         <input
                             type="text"
                             id="name"
@@ -144,7 +144,7 @@
                             )}
                             bind:value={formData.name}
                             on:input={() => validate_onchange('name')}
-                            placeholder="Name"
+                            placeholder={$_('name')}
                         />
                         {#if validation.is_error('name')}
                             <span class="error"
@@ -156,7 +156,7 @@
 
                 <div class="row grid-cols-2">
                     <div class="input">
-                        <label for="email">Email</label>
+                        <label for="email">{$_('email')}</label>
                         <input
                             type="text"
                             id="email"
@@ -171,7 +171,7 @@
                                 validate_onchange('email_or_phone');
                                 validate_onchange('email');
                             }}
-                            placeholder="E-mail"
+                            placeholder={$_('email')}
                         />
                         {#if !validation.is_error('email_or_phone') && validation.is_error('email')}
                             <span class="error"
@@ -181,7 +181,7 @@
                     </div>
 
                     <div class="input">
-                        <label for="phone">Phone</label>
+                        <label for="phone">{$_('phone')}</label>
                         <input
                             type="tel"
                             id="phone"
@@ -192,7 +192,7 @@
                                     'invalid'
                             )}
                             on:input={() => validate_onchange('email_or_phone')}
-                            placeholder="Phone"
+                            placeholder={$_('phone')}
                         />
                     </div>
 
@@ -205,7 +205,7 @@
 
                 <div class="row">
                     <div class="input">
-                        <label for="message">Message</label>
+                        <label for="message">{$_('message')}</label>
                         <textarea
                             id="message"
                             name="message"
@@ -215,7 +215,7 @@
                             bind:value={formData.message}
                             on:input={() => validate_onchange('message')}
                             rows={4}
-                            placeholder="Message ..."
+                            placeholder={$_('message')}
                         />
                         {#if validation.is_error('message')}
                             <span class="error"
@@ -233,7 +233,7 @@
 
                 <div class="row justify-center">
                     <button type="submit" class="submit-btn"
-                        >Send Message</button
+                        >{$_('send_message')}</button
                     >
                 </div>
             </form>
@@ -244,8 +244,7 @@
         <Card class="c-card h-full">
             <div class="wrap">
                 <p>
-                    فرم را پر کنید یا از راه های ارتباطی زیر برای تماس با من
-                    استفاده کنید ...
+                    {$_('fill_form_or_other_ways')}
                 </p>
 
                 <div class="c-ways">
@@ -364,6 +363,7 @@
 
     .submit-btn {
         @apply bg-blue-500 text-white w-fit px-4 py-2 rounded-2xl;
+        @apply font-semibold;
     }
 
     .wrap {
