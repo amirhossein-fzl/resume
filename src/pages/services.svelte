@@ -26,10 +26,10 @@
 <style lang="scss">
     .row {
         // @apply grid grid-cols-2 gap-6;
-        @apply flex flex-wrap w-full -mx-3;
+        @apply flex flex-wrap w-full gap-6;
         .item {
-            @apply max-w-full w-4/12 flex-auto px-6 h-fit;
-            @apply flex flex-col gap-10;
+            @apply max-w-full w-full flex-auto h-fit;
+            @apply flex flex-col gap-10 sm:w-4/12 md:w-3/12;
         }
     }
 </style>
