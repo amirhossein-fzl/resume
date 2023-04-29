@@ -29,7 +29,8 @@
 
 <style lang="scss">
     :global(.navigation) {
-        @apply w-fit px-4 py-2 rounded-2xl flex mx-auto mt-28 gap-2;
+        @apply w-fit px-4 py-2 rounded-2xl flex max-[598px]:flex-col mx-auto mt-16 gap-2;
+        @apply min-[599px]:mt-28;
     }
 
     .link {

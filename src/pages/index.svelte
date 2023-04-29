@@ -10,7 +10,7 @@
     let is_ready: boolean = true;
 </script>
 
-<div class="flex gap-4">
+<div class="row">
     <div class="about">
         <img
             src="/img/amir-developer.jpg"
@@ -72,8 +72,13 @@
 </div>
 
 <style lang="scss">
+    .row {
+        @apply flex flex-col min-[960px]:flex-row gap-4;
+    }
+
     .about {
-        @apply w-7/12 flex gap-4 items-start;
+        // w-7/12
+        @apply w-full flex gap-4 items-start;
         p:not(:first-child) {
             @apply mt-3;
         }
@@ -84,7 +89,8 @@
     }
 
     .info {
-        @apply w-5/12;
+        // w-5/12;
+        @apply w-full;
 
         li {
             @apply flex items-center;
@@ -101,7 +107,7 @@
     }
 
     .profile {
-        @apply w-20 h-auto rounded-full;
+        @apply w-20 h-auto rounded-full hidden sm:block;
     }
 
     :global(.qoute-box) {
@@ -111,7 +117,7 @@
             content: '';
             @apply w-3 h-3 inline-block absolute rotate-45 rounded-sm;
             @apply top-6 -right-1.5 bg-white  border-slate-900/20;
-            @apply border-t border-r;
+            @apply border-t border-r hidden sm:block;
         }
     }
 

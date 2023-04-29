@@ -25,9 +25,9 @@
         <img src="/img/amir-developer.jpg" on:click={fullview_profile} alt="Amirhossein fazli profiles" class="profile">
 
         <div class="info-container">
-            <h1 class="name">{$_('name')}</h1>
+            <h1 class="name">{$_('my_name')}</h1>
             <h2 class="job">{$_('job')}</h2>
-            <p class="mt-3">{$_('short_description')}</p>
+            <p class="short-about">{$_('short_description')}</p>
             <div class="social_networks">
                 <a href="https://instagram.com/amirhossein_fzl/" target="_blank">
                     <Icon icon={InstagramIcon} size={28} stroke="" />
@@ -67,15 +67,15 @@
     }
 
     .my {
-        @apply flex justify-center mt-20 gap-8 items-center w-6/12;
+        @apply flex flex-col md:flex-row justify-center mt-20 gap-8 items-center w-6/12;
     }
 
     .profile {
-        @apply w-40 h-40 rounded-full cursor-pointer;
+        @apply w-40 h-auto rounded-full cursor-pointer;
     }
 
     .info-container {
-        @apply flex flex-col w-full;
+        @apply flex flex-col items-center md:items-start w-full;
     }
 
     .name {
@@ -84,6 +84,10 @@
 
     .job {
         @apply text-sm text-slate-800 mt-0.5;
+    }
+
+    .short-about {
+        @apply mt-3 text-center md:text-start;
     }
 
     .social_networks {
