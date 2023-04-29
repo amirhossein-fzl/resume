@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Card from '@/components/Card.svelte';
     import Icon from '@/components/Icon.svelte';
     import CloseIcon from '@/svg/icons/close.svg?raw';
     import PhoneIcon from '@/svg/icons/phone.svg?raw';
@@ -99,7 +100,7 @@
 
 <div class="row grid-cols-2">
     <div class="item">
-        <div class="card">
+        <Card class="c-card">
             {#if status.show}
                 <div
                     in:fly={{ duration: 300, y: -10 }}
@@ -236,11 +237,11 @@
                     >
                 </div>
             </form>
-        </div>
+        </Card>
     </div>
 
     <div class="item">
-        <div class="card h-full">
+        <Card class="c-card h-full">
             <div class="wrap">
                 <p>
                     فرم را پر کنید یا از راه های ارتباطی زیر برای تماس با من
@@ -300,7 +301,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </Card>
     </div>
 </div>
 
@@ -309,8 +310,8 @@
         @apply grid gap-6;
     }
 
-    .card {
-        @apply bg-slate-100 rounded-xl px-4 py-4 w-full;
+    :global(.c-card) {
+        @apply rounded-xl px-4 py-4 w-full;
     }
 
     .alert {
@@ -388,9 +389,6 @@
     }
 
     :global(.dark) {
-        .card {
-            @apply bg-slate-800 shadow-dark;
-        }
 
         input,
         textarea {

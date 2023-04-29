@@ -6,7 +6,8 @@ module.exports = {
     theme: {
         extend: {
             boxShadow: {
-                'dark': 'inset 0 1px 0 0 hsl(0deg 0% 100% / 5%)'
+                'dark': 'inset 0 1px 0 0 hsl(0deg 0% 100% / 5%)',
+                'light': '0px 2px 13px -2px rgba(0,0,0,0.13)',
             }
         },
         screens: {

@@ -1,22 +1,16 @@
 <script lang="ts">
     import LanguageSwitcher from "../LanguageSwitcher.svelte";
     import ThemeSwitcher from "../ThemeSwitcher.svelte";
+    import Card from "../Card.svelte";
 </script>
 
-<nav>
+<Card class="nav" tag="nav">
     <LanguageSwitcher />
     <ThemeSwitcher />
-</nav>
+</Card>
 
 <style lang="scss">
-    nav {
+    :global(.nav) {
         @apply flex justify-between items-center px-4 py-2 rounded-2xl;
-        @apply bg-slate-100;
-    }
-
-    :global(.dark) {
-        nav {
-            @apply bg-slate-800 shadow-dark;
-        }
     }
 </style>

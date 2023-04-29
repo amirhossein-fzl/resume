@@ -1,10 +1,11 @@
 <script lang="ts">
+    import Card from "./Card.svelte";
     import Icon from "./Icon.svelte";
     export let icon: string; 
     export let title: string; 
 </script>
 
-<div class="box">
+<Card class="tech-box">
     <div class="icon">
         <Icon icon={icon} stroke="" color="" size={100} />
     </div>
@@ -15,11 +16,11 @@
             <slot />
         </p>
     </div>
-</div>
+</Card>
 
 <style lang="scss">
-    .box {
-        @apply px-4 py-2 bg-slate-100 rounded-2xl flex items-center gap-4;
+    :global(.tech-box) {
+        @apply px-4 py-2 rounded-2xl flex items-center gap-4;
     }
 
     .title {
@@ -31,9 +32,6 @@
     }
 
     :global(.dark) {
-        .box {
-            @apply bg-slate-800 shadow-dark;
-        }
 
         :global(.php-logo) {
             @apply fill-white;

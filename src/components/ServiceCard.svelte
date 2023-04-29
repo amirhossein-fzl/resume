@@ -1,23 +1,21 @@
 <script lang="ts">
+    import Card from "./Card.svelte";
     import clsx from "clsx";
     export let title: string;
     let className: string = '';
     export { className as class };
 </script>
 
-<div class={clsx("sv-card", className)}>
+<Card class={clsx("sv-card", className)}>
     <h2 class="sv-title">{title}</h2>
 
     <p class="sv-desc">
         <slot />
     </p>
-</div>
+</Card>
 
 <style lang="scss">
     .sv {
-        &-card {
-            @apply bg-slate-100 rounded-xl px-4 py-4 w-full;
-        }
 
         &-title {
             @apply text-lg font-semibold text-center;
@@ -28,9 +26,7 @@
         }
     }
 
-    :global(.dark) {
-        .sv-card {
-            @apply bg-slate-800 shadow-dark;
-        }
+    :global(.sv-card) {
+        @apply rounded-xl px-4 py-4 w-full;
     }
 </style>

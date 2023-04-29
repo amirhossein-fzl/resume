@@ -1,16 +1,23 @@
 <script lang="ts">
+    import Card from '@/components/Card.svelte';
     import { _ } from 'svelte-i18n';
     import clsx from 'clsx';
 
-    // @ts-ignore
-    const age = Math.floor((new Date() - new Date("2005-06-15").getTime()) / 3.15576e+10);
+    const age = Math.floor(
+        // @ts-ignore
+        (new Date() - new Date('2005-06-15').getTime()) / 3.15576e10
+    );
     let is_ready: boolean = true;
 </script>
 
 <div class="flex gap-4">
     <div class="about">
-        <img src="/img/amir-developer.jpg" class="profile" alt="amirhossein fazli profile">
-        <div class="qoute-box">
+        <img
+            src="/img/amir-developer.jpg"
+            class="profile"
+            alt="amirhossein fazli profile"
+        />
+        <Card class="qoute-box">
             <p>
                 {$_('about-1')}
             </p>
@@ -23,11 +30,11 @@
             <p>
                 {$_('about-4')}
             </p>
-        </div>
+        </Card>
     </div>
 
     <div class="info">
-        <div class="box">
+        <Card class="box">
             <ul>
                 <li>
                     <span class="title">{$_('fullname')}</span>
@@ -51,10 +58,16 @@
                 </li>
                 <li>
                     <span class="title">{$_('status')}</span>
-                    <span class={clsx('value', 'status', is_ready ? 'ready' : 'no-ready')}>{$_('my_status')}</span>
+                    <span
+                        class={clsx(
+                            'value',
+                            'status',
+                            is_ready ? 'ready' : 'no-ready'
+                        )}>{$_('my_status')}</span
+                    >
                 </li>
             </ul>
-        </div>
+        </Card>
     </div>
 </div>
 
@@ -91,18 +104,19 @@
         @apply w-20 h-auto rounded-full;
     }
 
-    .qoute-box {
-        @apply bg-slate-100 py-4 px-5 rounded-2xl relative w-full h-full;
+    :global(.qoute-box) {
+        @apply py-4 px-5 rounded-2xl relative w-full h-full;
 
         &::before {
-            content: "";
-            @apply bg-slate-100 w-3 h-3 inline-block absolute rotate-45 rounded-sm;
-            @apply top-6 -right-1.5;
+            content: '';
+            @apply w-3 h-3 inline-block absolute rotate-45 rounded-sm;
+            @apply top-6 -right-1.5 bg-white  border-slate-900/20;
+            @apply border-t border-r;
         }
     }
 
-    .box {
-        @apply bg-slate-100 py-4 px-5 rounded-2xl relative w-full h-full;
+    :global(.info .box) {
+        @apply py-4 px-5 rounded-2xl relative w-full h-full;
     }
 
     .status {
@@ -117,8 +131,8 @@
         @apply text-red-500;
     }
 
-    :global(html[dir="ltr"]) {
-        .qoute-box {
+    :global(html[dir='ltr']) {
+        :global(.qoute-box) {
             &::before {
                 right: unset;
                 @apply -left-1.5;
@@ -127,11 +141,7 @@
     }
 
     :global(.dark) {
-        .qoute-box, .box {
-            @apply bg-slate-800 shadow-dark;
-        }
-
-        .qoute-box::before {
+        :global(.qoute-box::before) {
             @apply bg-slate-800;
         }
 

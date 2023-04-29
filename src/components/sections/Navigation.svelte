@@ -1,10 +1,11 @@
 <script lang="ts">
+    import Card from '../Card.svelte';
     import clsx from 'clsx';
     import { isActive } from "@roxi/routify";
     import { _ } from 'svelte-i18n';
 </script>
 
-<section>
+<Card class="navigation" tag="section">
     <a href="/" class={clsx('link', $isActive('/', {}, { recursive: false }) && 'active')}>
         {$_('about_me')}
     </a>
@@ -24,13 +25,11 @@
     <a href="/contact" class={clsx('link', $isActive('/contact', {}, { recursive: false }) && 'active')}>
         {$_('contact_me')}
     </a>
-
-</section>
+</Card>
 
 <style lang="scss">
-    section {
+    :global(.navigation) {
         @apply w-fit px-4 py-2 rounded-2xl flex mx-auto mt-28 gap-2;
-        @apply bg-slate-100;
     }
 
     .link {
@@ -38,12 +37,6 @@
 
         &.active {
             @apply bg-blue-500 text-white;
-        }
-    }
-
-    :global(.dark) {
-        section {
-            @apply shadow-dark bg-slate-800;
         }
     }
 </style>

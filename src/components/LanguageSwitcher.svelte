@@ -55,12 +55,12 @@
         @apply w-fit select-none relative;
         .lang {
             @apply outline-none w-full flex items-center gap-2;
-            @apply cursor-pointer bg-white rounded-full;
+            @apply cursor-pointer ring-1 ring-slate-900/10 rounded-full;
             @apply px-4 py-1.5;
         }
 
         .items {
-            @apply bg-white absolute shadow-lg px-2 py-1 rounded-lg;
+            @apply bg-white ring-1 ring-slate-900/10 absolute shadow-lg px-2 py-1 rounded-lg;
             @apply left-0 right-0 w-fit mx-auto;
             button {
                 @apply list-none cursor-pointer px-2 py-1 duration-300;
@@ -76,10 +76,10 @@
     :global(.dark) {
         .box {
             .lang {
-                @apply bg-slate-700 text-white;
+                @apply bg-slate-700 text-white ring-0;
             }
             .items {
-                @apply bg-slate-700 text-white shadow-dark;
+                @apply bg-slate-700 text-white shadow-dark ring-0;
             }
         }
     }
