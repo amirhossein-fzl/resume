@@ -1,0 +1,10 @@
+{
+    "outputDirectory": "dist/client",
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
+    ],
+    "trailingSlash": true
+}
