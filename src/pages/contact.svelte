@@ -35,6 +35,9 @@
         }
     });
 
+    let theme: string;
+    $: theme = localStorage.getItem('theme');
+
     let status: IStatus = {
         show: true,
         status: 'error',
@@ -227,7 +230,7 @@
 
                 <div
                     class="g-recaptcha"
-                    data-theme="dark"
+                    data-theme={theme}
                     data-sitekey="6Lf5f6slAAAAAE_8nBxVlTSrEF1H2Gdu6PY7ZqEQ"
                 />
 
