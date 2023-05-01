@@ -35,6 +35,7 @@
         }
     });
 
+    let form: HTMLFormElement;
     let theme: string;
     $: theme = localStorage.getItem('theme');
 
@@ -98,6 +99,18 @@
 
     let submit = () => {
         validate();
+
+        let data = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: data,
+        }).then(response => {
+            console.log(response);
+        }).catch(err => {
+            console.log('error');
+            console.log(err);
+        })
     };
 </script>
 
@@ -129,7 +142,7 @@
                 </div>
             {/if}
 
-            <form action="#" on:submit|preventDefault={submit}>
+            <form action="http://localhost:8080/contact" bind:this={form} on:submit|preventDefault={submit}>
                 <input
                     type="hidden"
                     name="access_key"
