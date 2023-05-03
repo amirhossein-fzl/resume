@@ -76,6 +76,11 @@
         validation.is_empty,
         $_('validation-errors.message.required')
     );
+    validation.add_rule(
+        'captcha',
+        validation.is_empty,
+        $_('validation-errors.captcha.required')
+    );
 
     let validate_onchange = (field: Fields) => {
         if (field == 'email_or_phone') {
@@ -95,6 +100,14 @@
             formData.phone.toString()
         );
         validation.run_rule('message', formData.message);
+
+        let recaptcha_token: string =
+            // @ts-ignore
+            window.grecaptcha != undefined
+                ? // @ts-ignore
+                  window.grecaptcha.getResponse()
+                : '';
+        validation.run_rule('captcha', recaptcha_token);
         validation = validation;
     };
 
@@ -115,7 +128,7 @@
         data.append(
             'g-recaptcha-response',
             // @ts-ignore
-            form_data.get('g-recaptcha-response')
+            form_data.get('g-recaptcha-response') || ''
         );
 
         let unexpected_error = (): void => {
@@ -297,11 +310,22 @@
                     </div>
                 </div>
 
-                <div
-                    class="g-recaptcha"
-                    data-theme={theme}
-                    data-sitekey="6Lf5f6slAAAAAE_8nBxVlTSrEF1H2Gdu6PY7ZqEQ"
-                />
+                <div>
+                    <div
+                        class={clsx(
+                            'g-recaptcha',
+                            validation.is_error('captcha') && 'invalid'
+                        )}
+                        data-theme={theme}
+                        data-sitekey="6Lf5f6slAAAAAE_8nBxVlTSrEF1H2Gdu6PY7ZqEQ"
+                    />
+
+                    {#if validation.is_error('captcha')}
+                        <span class="error"
+                            >{validation.get_error('captcha')}</span
+                        >
+                    {/if}
+                </div>
 
                 <div class="row justify-center">
                     <button
@@ -454,6 +478,14 @@
 
     .error {
         @apply text-xs text-red-500 mt-2;
+    }
+
+    .g-recaptcha {
+        @apply w-fit;
+
+        &.invalid {
+            @apply border-2 border-red-500;
+        }
     }
 
     .submit-btn {

@@ -124,6 +124,10 @@
         },
         "message": {
             "required": "The message field is required!"
+        },
+        "captcha": {
+            "required": "Solving captcha is required!",
+            "invalid": "Captcha is invalid!"
         }
     },
     "form-contact": {

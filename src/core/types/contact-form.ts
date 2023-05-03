@@ -18,7 +18,7 @@ export interface IFormData {
     message: string;
 }
 
-export type Fields = 'name' | 'email' | 'email_or_phone' | 'message';
+export type Fields = 'name' | 'email' | 'email_or_phone' | 'message' | 'captcha';
 
 export interface IStatus {
     show: boolean,
