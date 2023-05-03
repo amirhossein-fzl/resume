@@ -128,6 +128,7 @@
     },
     "form-contact": {
         "result": {
+            "loading": "Sending ... Please wait a few moments ...",
             "success": "Your message has been sent! You will receive your answer within 24 hours!",
             "unexpected": "Unexpected error on the server! Try again or use another way to contact me! We are happy to report the error as well ..."
         }

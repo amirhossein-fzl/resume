@@ -13,7 +13,7 @@
     import clsx from 'clsx';
     import type { IFormData, Fields, IStatus } from '@/core/types/contact-form';
     import Validation from '@/core/validate';
-    import { fly } from 'svelte/transition';
+    import { fly, scale } from 'svelte/transition';
 
     onMount(() => {
         let script_el = document.getElementById('googleRecaptchaScript');
@@ -25,7 +25,7 @@
             script.async = true;
             script.defer = true;
             document.head.appendChild(script);
-        }
+        };
 
         if (script_el == null) {
             create_script();
@@ -37,6 +37,7 @@
 
     let form: HTMLFormElement;
     let theme: string;
+    let disabled_submit: boolean = false;
     $: theme = localStorage.getItem('theme');
 
     let status: IStatus = {
@@ -104,24 +105,32 @@
 
         let data = new URLSearchParams();
         // @ts-ignore
-        data.append("name", form_data.get("name"));
+        data.append('name', form_data.get('name'));
         // @ts-ignore
-        data.append("email", form_data.get("email"));
+        data.append('email', form_data.get('email'));
         // @ts-ignore
-        data.append("phone", form_data.get("phone"));
+        data.append('phone', form_data.get('phone'));
         // @ts-ignore
-        data.append("message", form_data.get("message"));
-        // @ts-ignore
-        data.append("g-recaptcha-response", form_data.get("g-recaptcha-response"));
+        data.append('message', form_data.get('message'));
+        data.append(
+            'g-recaptcha-response',
+            // @ts-ignore
+            form_data.get('g-recaptcha-response')
+        );
 
         let unexpected_error = (): void => {
-            status.show = true;
             status.status = 'error';
             status.message = $_('form-contact.result.unexpected');
             status = status;
-        }
+        };
 
-        if (validation.has_error()) {
+        if (!validation.has_error()) {
+            status.show = true;
+            status.status = 'loading';
+            status.message = $_('form-contact.result.loading');
+            status = status;
+            disabled_submit = true;
+
             fetch(form.action, {
                 method: 'POST',
                 headers: {
@@ -129,32 +138,37 @@
                 },
                 body: data,
             })
-            .then(async response => {
-                if (response.status == 200) {
-                    status.show = true;
-                    status.status = 'success';
-                    status.message = $_('form-contact.result.success');
-                    status = status;
-                    form.reset();
-                } else if (response.status == 400) {
-                    let error_messages = Object.entries((await response.json()).messages);
-                    let errors = validation.get_errors();
-                    
-                    error_messages.forEach(([key, value]: [string, string]) => {
-                        errors[key] = $_(value);
-                    });
-                    
-                    validation.set_errors(errors);
-                    validation = validation;
-                } else {
+                .then(async (response) => {
+                    if (response.status == 200) {
+                        status.status = 'success';
+                        status.message = $_('form-contact.result.success');
+                        status = status;
+                        form.reset();
+                    } else if (response.status == 400) {
+                        let error_messages = Object.entries(
+                            (await response.json()).messages
+                        );
+                        let errors = validation.get_errors();
+
+                        error_messages.forEach(
+                            ([key, value]: [string, string]) => {
+                                errors[key] = $_(value);
+                            }
+                        );
+
+                        validation.set_errors(errors);
+                        validation = validation;
+                    } else {
+                        unexpected_error();
+                    }
+                    disabled_submit = false;
+                })
+                .catch((_err) => {
                     unexpected_error();
-                }
-            })
-            .catch(_err => {
-                unexpected_error();
-            });
+                    disabled_submit = false;
+                });
         }
-    }
+    };
 </script>
 
 <div class="row main-row">
@@ -185,7 +199,11 @@
                 </div>
             {/if}
 
-            <form action="http://127.0.0.1:8080/contact" bind:this={form} on:submit|preventDefault={submit}>
+            <form
+                action="http://127.0.0.1:8080/contact"
+                bind:this={form}
+                on:submit|preventDefault={submit}
+            >
                 <div class="row">
                     <div class="input">
                         <label for="name">{$_('name')}</label>
@@ -286,9 +304,19 @@
                 />
 
                 <div class="row justify-center">
-                    <button type="submit" class="submit-btn"
-                        >{$_('send_message')}</button
+                    <button
+                        type="submit"
+                        disabled={disabled_submit}
+                        class="submit-btn"
                     >
+                        {#if disabled_submit}
+                            <div
+                                class="loading"
+                                transition:scale={{ duration: 300 }}
+                            />
+                        {/if}
+                        <span>{$_('send_message')}</span>
+                    </button>
                 </div>
             </form>
         </Card>
@@ -393,14 +421,14 @@
             @apply bg-red-500;
         }
 
-        .loading {
-            @apply animate-spin w-5 h-5 border-[3px] border-white;
-            @apply border-r-transparent rounded-full inline-block;
-        }
-
         .msg-wrapper {
             @apply flex items-center gap-2;
         }
+    }
+
+    .loading {
+        @apply animate-spin w-5 h-5 border-[3px] border-white;
+        @apply border-r-transparent rounded-full inline-block;
     }
 
     form {
@@ -430,7 +458,10 @@
 
     .submit-btn {
         @apply bg-blue-500 text-white w-fit px-4 py-2 rounded-2xl;
-        @apply font-semibold;
+        @apply font-semibold flex items-center gap-2;
+        &:disabled {
+            @apply bg-blue-400;
+        }
     }
 
     .wrap {
@@ -456,7 +487,6 @@
     }
 
     :global(.dark) {
-
         input,
         textarea {
             @apply outline-slate-600 bg-transparent;
