@@ -3,6 +3,7 @@ export interface IValidationErrors {
     email: string;
     email_or_phone: string;
     message: string;
+    captcha: string;
 }
 
 export interface IRule {

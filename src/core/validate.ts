@@ -9,6 +9,7 @@ export class ValidationErrors<T extends keyof IValidationErrors> {
             email: '',
             email_or_phone: '',
             message: '',
+            captcha: '',
         };
 
         this.get_error.bind(this);
@@ -20,6 +21,14 @@ export class ValidationErrors<T extends keyof IValidationErrors> {
 
     public set_error(field: T, message: string): void {
         this._errors[field] = message;
+    }
+
+    public get_errors(): IValidationErrors {
+        return this._errors;
+    }
+
+    public set_errors(errors: IValidationErrors): void {
+        this._errors = errors;
     }
 
     public is_error(field: T): boolean {

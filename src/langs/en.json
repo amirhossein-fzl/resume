@@ -126,6 +126,12 @@
             "required": "The message field is required!"
         }
     },
+    "form-contact": {
+        "result": {
+            "success": "Your message has been sent! You will receive your answer within 24 hours!",
+            "unexpected": "Unexpected error on the server! Try again or use another way to contact me! We are happy to report the error as well ..."
+        }
+    },
     "fill_form_or_other_ways": "Fill out the form or use the communication methods below to contact me ...",
     "name": "Name",
     "phone": "Phone",

@@ -40,7 +40,7 @@
     $: theme = localStorage.getItem('theme');
 
     let status: IStatus = {
-        show: true,
+        show: false,
         status: 'error',
         message: $_('contact_form.not_working'),
     };
@@ -100,18 +100,61 @@
     let submit = () => {
         validate();
 
-        let data = new FormData(form);
+        let form_data = new FormData(form);
 
-        fetch(form.action, {
-            method: 'POST',
-            body: data,
-        }).then(response => {
-            console.log(response);
-        }).catch(err => {
-            console.log('error');
-            console.log(err);
-        })
-    };
+        let data = new URLSearchParams();
+        // @ts-ignore
+        data.append("name", form_data.get("name"));
+        // @ts-ignore
+        data.append("email", form_data.get("email"));
+        // @ts-ignore
+        data.append("phone", form_data.get("phone"));
+        // @ts-ignore
+        data.append("message", form_data.get("message"));
+        // @ts-ignore
+        data.append("g-recaptcha-response", form_data.get("g-recaptcha-response"));
+
+        let unexpected_error = (): void => {
+            status.show = true;
+            status.status = 'error';
+            status.message = $_('form-contact.result.unexpected');
+            status = status;
+        }
+
+        if (validation.has_error()) {
+            fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: data,
+            })
+            .then(async response => {
+                if (response.status == 200) {
+                    status.show = true;
+                    status.status = 'success';
+                    status.message = $_('form-contact.result.success');
+                    status = status;
+                    form.reset();
+                } else if (response.status == 400) {
+                    let error_messages = Object.entries((await response.json()).messages);
+                    let errors = validation.get_errors();
+                    
+                    error_messages.forEach(([key, value]: [string, string]) => {
+                        errors[key] = $_(value);
+                    });
+                    
+                    validation.set_errors(errors);
+                    validation = validation;
+                } else {
+                    unexpected_error();
+                }
+            })
+            .catch(_err => {
+                unexpected_error();
+            });
+        }
+    }
 </script>
 
 <div class="row main-row">
@@ -142,12 +185,7 @@
                 </div>
             {/if}
 
-            <form action="http://localhost:8080/contact" bind:this={form} on:submit|preventDefault={submit}>
-                <input
-                    type="hidden"
-                    name="access_key"
-                    value="89ac8ef9-548e-481a-8549-2f0c1a6fad24"
-                />
+            <form action="http://127.0.0.1:8080/contact" bind:this={form} on:submit|preventDefault={submit}>
                 <div class="row">
                     <div class="input">
                         <label for="name">{$_('name')}</label>
