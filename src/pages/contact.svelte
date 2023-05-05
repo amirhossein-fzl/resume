@@ -112,7 +112,7 @@
     };
 
     let submit = () => {
-        validate();
+        // validate();
 
         let form_data = new FormData(form);
 
@@ -213,7 +213,7 @@
             {/if}
 
             <form
-                action="http://127.0.0.1:8080/contact"
+                action="https://puce-vivacious-butterfly.cyclic.app/contact"
                 bind:this={form}
                 on:submit|preventDefault={submit}
             >
