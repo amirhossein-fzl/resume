@@ -112,7 +112,7 @@
     };
 
     let submit = () => {
-        // validate();
+        validate();
 
         let form_data = new FormData(form);
 
