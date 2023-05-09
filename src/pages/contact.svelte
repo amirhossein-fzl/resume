@@ -41,7 +41,7 @@
     $: theme = localStorage.getItem('theme');
 
     let status: IStatus = {
-        show: true,
+        show: false,
         status: 'error',
         message: 'contact_form.not_working',
     };
