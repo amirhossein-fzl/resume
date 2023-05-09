@@ -41,9 +41,9 @@
     $: theme = localStorage.getItem('theme');
 
     let status: IStatus = {
-        show: false,
+        show: true,
         status: 'error',
-        message: $_('contact_form.not_working'),
+        message: 'contact_form.not_working',
     };
 
     let formData: IFormData = {
@@ -59,27 +59,27 @@
     validation.add_rule(
         'name',
         validation.is_empty,
-        $_('validation-errors.name.required')
+        'validation-errors.name.required'
     );
     validation.add_rule(
         'email',
         validation.is_email,
-        $_('validation-errors.email.invalid')
+        'validation-errors.email.invalid'
     );
     validation.add_rule(
         'email_or_phone',
         validation.require_one,
-        $_('validation-errors.email_or_phone')
+        'validation-errors.email_or_phone'
     );
     validation.add_rule(
         'message',
         validation.is_empty,
-        $_('validation-errors.message.required')
+        'validation-errors.message.required'
     );
     validation.add_rule(
         'captcha',
         validation.is_empty,
-        $_('validation-errors.captcha.required')
+        'validation-errors.captcha.required'
     );
 
     let validate_onchange = (field: Fields) => {
@@ -203,7 +203,7 @@
                         {#if status.status == 'loading'}
                             <div class="loading" />
                         {/if}
-                        <span class="msg">{status.message}</span>
+                        <span class="msg">{$_(status.message)}</span>
                     </div>
 
                     <button on:click={() => (status.show = !status.show)}>
@@ -233,7 +233,7 @@
                         />
                         {#if validation.is_error('name')}
                             <span class="error"
-                                >{validation.get_error('name')}</span
+                                >{$_(validation.get_error('name'))}</span
                             >
                         {/if}
                     </div>
@@ -260,7 +260,7 @@
                         />
                         {#if !validation.is_error('email_or_phone') && validation.is_error('email')}
                             <span class="error"
-                                >{validation.get_error('email')}</span
+                                >{$_(validation.get_error('email'))}</span
                             >
                         {/if}
                     </div>
@@ -283,7 +283,7 @@
 
                     {#if validation.is_error('email_or_phone')}
                         <span class="error"
-                            >{validation.get_error('email_or_phone')}</span
+                            >{$_(validation.get_error('email_or_phone'))}</span
                         >
                     {/if}
                 </div>
@@ -304,7 +304,7 @@
                         />
                         {#if validation.is_error('message')}
                             <span class="error"
-                                >{validation.get_error('message')}</span
+                                >{$_(validation.get_error('message'))}</span
                             >
                         {/if}
                     </div>
@@ -322,7 +322,7 @@
 
                     {#if validation.is_error('captcha')}
                         <span class="error"
-                            >{validation.get_error('captcha')}</span
+                            >{$_(validation.get_error('captcha'))}</span
                         >
                     {/if}
                 </div>
