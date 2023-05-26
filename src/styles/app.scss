@@ -6,4 +6,6 @@
 body {
     @apply font-[IRANSans] bg-white dark:bg-slate-900;
     @apply text-slate-900 dark:text-slate-300 text-base;
+    @apply h-full;
 }
+

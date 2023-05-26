@@ -145,5 +145,7 @@
     "send_message": "Send Message",
     "contact_form": {
         "not_working": "Our contact form is not working at the moment ... contact us in other ways ..."
-    }
+    },
+    "footer": "©{year} Amirhossein Fazli | All rights reserved.",
+    "source": "source"
 }
