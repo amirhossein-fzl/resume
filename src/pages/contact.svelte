@@ -133,14 +133,14 @@
 
         let unexpected_error = (): void => {
             status.status = 'error';
-            status.message = $_('form-contact.result.unexpected');
+            status.message = 'form-contact.result.unexpected';
             status = status;
         };
 
         if (!validation.has_error()) {
             status.show = true;
             status.status = 'loading';
-            status.message = $_('form-contact.result.loading');
+            status.message = 'form-contact.result.loading';
             status = status;
             disabled_submit = true;
 
@@ -154,7 +154,7 @@
                 .then(async (response) => {
                     if (response.status == 200) {
                         status.status = 'success';
-                        status.message = $_('form-contact.result.success');
+                        status.message = 'form-contact.result.success';
                         status = status;
                         form.reset();
                     } else if (response.status == 400) {
