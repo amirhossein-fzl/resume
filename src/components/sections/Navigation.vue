@@ -1,10 +1,10 @@
 <script setup lang="ts">
-    
+    import LanguageSwitcher from './LanguageSwitcher.vue';
 </script>
 
 <template>
     <nav>
-        
+        <LanguageSwitcher />
     </nav>
 </template>
 
