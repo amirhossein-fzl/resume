@@ -12,6 +12,7 @@ export default defineConfig({
     resolve: {
         alias: {
             "@": resolve(__dirname, "src"),
+            "@sections": resolve(__dirname, "src/components/sections"),
         }
     }
 });

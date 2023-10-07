@@ -21,6 +21,7 @@
         "noFallthroughCasesInSwitch": true,
         "paths": {
             "@/*": ["./src/*"],
+            "@sections/*": ["./src/components/sections/*"],
         }
     },
     "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
