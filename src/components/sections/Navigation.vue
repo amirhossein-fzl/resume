@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import LanguageSwitcher from './LanguageSwitcher.vue';
+import ThemeSwitcher from './ThemeSwitcher.vue';
 </script>
 
 <template>
@@ -23,6 +24,8 @@ import LanguageSwitcher from './LanguageSwitcher.vue';
                 <a href="#/contact">{{ $t("contact_me") }}</a>
             </li>
         </ul>
+
+        <ThemeSwitcher />
     </nav>
 </template>
 
@@ -30,9 +33,18 @@ import LanguageSwitcher from './LanguageSwitcher.vue';
 nav {
     @apply bg-white shadow-light p-4 w-full rounded-xl;
     @apply flex justify-between items-center;
+    @apply dark:bg-slate-800 dark:shadow-dark;
 }
 
 .links {
-    @apply flex gap-4
+    @apply flex gap-4 dark:text-slate-100 font-medium;
+
+    a {
+        @apply duration-300;
+    }
+
+    a:hover {
+        @apply text-blue-400;
+    }
 }
 </style>

@@ -69,12 +69,14 @@ let toggle_icon = () => {
 .lang {
     @apply outline-none w-full flex items-center gap-2;
     @apply cursor-pointer ring-1 ring-slate-900/10 rounded-full;
-    @apply px-4 py-1.5;
+    @apply font-medium px-4 py-1.5;
+    @apply dark:bg-slate-700 dark:shadow-dark dark:text-slate-200;
 }
 
 .items {
     @apply bg-white ring-1 ring-slate-900/10 absolute shadow-lg px-2 py-1 rounded-lg;
     @apply left-0 right-0 w-fit mx-auto;
+    @apply dark:bg-slate-700 dark:shadow-dark dark:text-slate-200;
 
     button {
         @apply list-none cursor-pointer px-2 py-1 duration-300;
