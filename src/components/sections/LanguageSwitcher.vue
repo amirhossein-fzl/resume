@@ -3,45 +3,32 @@ import type { Ref } from "vue";
 import { ref, computed } from "vue";
 import Icon from "../Icon.vue";
 import { useI18n } from "vue-i18n";
-import { changeLanguage } from "@/core/language";
 import ChevronDownIcon from "@/assets/svg/icons/chevron-down.svg?raw";
 import USIcon from "@/assets/svg/flags/us.svg?raw";
 import IRIcon from "@/assets/svg/flags/ir.svg?raw";
+import { useLanguage } from "@/stores/language";
 
 const items_is_open: Ref<boolean> = ref(false);
-const icon: Ref<string> = ref(USIcon);
-const selected_lang = ref("en");
-const language_label = computed(() => selected_lang.value == "en" ? "english" : "persian");
-const language_icon = computed(() => selected_lang.value == "en" ? USIcon : IRIcon);
+const language = useLanguage();
+const current_lang_label = computed(() => language.current == "en" ? "english" : "persian");
+const current_lang_icon = computed(() => language.current == "en" ? USIcon : IRIcon);
 const i18n = useI18n();
 
 let selectLanguage = (lang: "fa" | "en") => {
-    // @ts-ignore
-    selected_lang.value = changeLanguage(lang, i18n);
+    language.changeTo(lang);
     i18n.locale.value = lang;
-
-    if (lang == "fa") {
-        icon.value = IRIcon;
-    } else {
-        icon.value = USIcon;
-    }
 };
 
 let toggle_items = () => {
     items_is_open.value = !items_is_open.value;
 };
-
-let toggle_icon = () => {
-    icon.value = icon.value == USIcon ? IRIcon : USIcon;
-};
-
 </script>
 
 <template>
     <div class="box">
         <div class="lang" tabindex="0" role="button" @focus="toggle_items" @blur="toggle_items">
-            <Icon :icon="language_icon" @click="toggle_icon" />
-            <span>{{ $t(language_label) }}</span>
+            <Icon :icon="current_lang_icon" />
+            <span>{{ $t(current_lang_label) }}</span>
             <Icon :icon="ChevronDownIcon" :size="14" />
         </div>
 
