@@ -1,0 +1,164 @@
+{
+    "english": "English",
+    "persian": "Persian",
+    "my_name": "Amirhossein Fazli",
+    "job": "Full-stack programmer",
+    "short_description": "I am a Full-stack programmer and I am ready to implement your business idea!",
+    "about_me": "About me",
+    "my_skills": "My skills",
+    "my_services": "My services",
+    "my_portfolios": "My portfolios",
+    "contact_me": "Contact me",
+    "about_1": "I have started learning programming professionally since 2018 and I am still continuing and this cycle continues to infinity ...",
+    "about_2": "In the beginning, I was trained with online courses (video trainings)...but later I was not limited to this source and I use all sources, including videos, texts, documents, videos, blogs, books, etc. ...",
+    "about_3": "I love programming in Rust. And I would like the backend of the websites I write to be in this language ... this language is wonderful!",
+    "about_4": "I like the open source world very much. I love Linux and I program with Linux ... because it gives me more freedom ...",
+    "fullname": "Fullname",
+    "age": "Age",
+    "country": "Country",
+    "my_country": "Iran",
+    "city": "City",
+    "my_city": "east-azarbijan - Marand",
+    "address": "Address",
+    "my_address": "bonab-e-jadid - Imam St. - Bakhshemandi alley - first ten meters - Fazli house",
+    "status": "Status",
+    "my_status": "Ready",
+    "languages": "Languages",
+    "freamworks": "Freamworks",
+    "databases": "Databases",
+    "os": "Operating system",
+    "other": "Others",
+    "mobile": "Mobile",
+    "bootstrap": {
+        "title": "Bootstrap",
+        "value": "The best and most popular user interface library for fast and responsive site building is undoubtedly Bootstrap ... This library is extremely powerful and extensible and can be customized with Sass ..."
+    },
+    "javascript": {
+        "title": "Javascript",
+        "value": "At the very beginning, I was learning this language in the front-end. But later, at an advanced level, I learned this language and now I use it both in the front-end and in the back-end ..."
+    },
+    "jquery": {
+        "title": "Jquery",
+        "value": "It is one of the most common JavaScript libraries ... This library has an interesting slogan that says: write less, do more! The amount of code written with this library is much less than VanillaJS or raw JavaScript ..."
+    },
+    "laravel": {
+        "title": "Laravel",
+        "value": "Laravel is an incredibly powerful web framework. This framework has extremely high development power ... literally, in the shortest possible time, the most complex projects can be implemented with it ..."
+    },
+    "linux": {
+        "title": "Linux",
+        "value": "Linux is a family of Unix-like open source operating systems ... distributions that use the Linux kernel are literally perfect for developers ... it has great security ... all the development tools in it It is up to date and any tool we want is available ..."
+    },
+    "mysql": {
+        "title": "MySql",
+        "value": "It is an open source and powerful database that has been one of the best databases for several years and has left good statistics ... it uses SQL language for its queries and is widely used in web applications ..."
+    },
+    "php": {
+        "title": "PHP",
+        "value": "The first language I learned when I started programming is PHP. Because php is focused on simplicity and also has a very good community. Also, complex websites can be easily implemented with this lovely language ..."
+    },
+    "postgresql": {
+        "title": "Postgresql",
+        "value": "An incredibly powerful database, open source and completely free! This database has very good features and uses the SQL language for its queries ... it can store all kinds of advanced information and has excellent performance features that can be compared to expensive databases!"
+    },
+    "react": {
+        "title": "React",
+        "value": "I use React to create powerful UIs for the web. Also, due to its large community, React has been used in many reputable companies around the world ..."
+    },
+    "rust": {
+        "title": "Rust",
+        "value": "I started learning this language in 2022. For this reason, I like this language, which, in addition to being a modern language, produces safe and efficient software and allows me to manage memory. And it also offers performance that can compete with C ..."
+    },
+    "sass": {
+        "title": "Sass",
+        "value": "Sass is an incredibly powerful preprocessor for css. In all the projects I write, I use sass instead of css ... the amount of code is extremely less and with the least amount of coding, most things can be done ..."
+    },
+    "svelte": {
+        "title": "Svelte",
+        "value": "Svelte is a wonderful compiler! This compiler produces powerful UIs. The output it produces is extremely light and less bulky than its competitors ... I use this modern compiler to produce light and compact UIs, while having a lot of power ..."
+    },
+    "tailwind": {
+        "title": "Tailwind CSS",
+        "value": "A wonderful and lovely styling tool that provides what it takes to develop an attractive and beautiful site ... We will never reinvent the existing wheel ... Tailwind, basic features required provides for creating themes and makes development faster ..."
+    },
+    "typescript": {
+        "title": "Typescript",
+        "value": "Most of the problems that existed in JavaScript were caused by types ... I use TypeScript in order to produce programs that do not have unexpected errors in the future. I write almost all the projects that I want to write with JavaScript in this language ..."
+    },
+    "vue": {
+        "title": "Vue",
+        "value": "Vue is a powerful framework with a very good ecosystem. It is easy to develop and can produce powerful UIs with it. I use this framework in frontend and desktop applications ..."
+    },
+    "dart": {
+        "title": "Dart",
+        "value": "Dart was known as an incredibly powerful language for creating UI for any platform. I make mobile applications (android & ios) and desktop applications (windows & mac & linux) from this language and with the help of the Flutter framework."
+    },
+    "flutter": {
+        "title": "Flutter",
+        "value": "Flutter is an open source framework created by Google for building cross-platform applications. You can have the most beautiful mobile and desktop application at the lowest cost and create a great experience for your users!"
+    },
+    "wasm": {
+        "title": "WebAssembly",
+        "value": "WebAssembly is a low-level language that runs in a binary format in the browser ... one of the distinctive features of this language is its speed ... I write the front-end code of the website with the Rust language and the output from it I get WebAssembly ..."
+    },
+    "front_end": {
+        "label": "Front-end",
+        "description": "We will design your website template in a responsive and user-friendly way with your desired features ..."
+    },
+    "back_end": {
+        "label": "Back-end",
+        "description": "We make the core and brain of your website with the format you like, in a scalable and efficient way ..."
+    },
+    "telegram_bot": {
+        "label": "Telegram bot",
+        "description": "We design functional and customized robots according to your needs using the best methods of robot development ..."
+    },
+    "mobile_service": {
+        "label": "Mobile Application",
+        "description": "We are ready to write your business application on Android and iOS mobile platforms!"
+    },
+    "education": "Education",
+    "diploma": {
+        "label": "Diploma",
+        "description": "I received my diploma from Shahid Beheshti School in Marand city in the field of mathematics and physics ..."
+    },
+    "2023": "2023",
+    "validation_errors": {
+        "name": {
+            "required": "The name field is required!"
+        },
+        "email": {
+            "required": "The Email field is required!",
+            "invalid": "The email is invalid!"
+        },
+        "email_or_phone": "The email or phone number is required!",
+        "phone": {
+            "required": "The phone number field is required!"
+        },
+        "message": {
+            "required": "The message field is required!"
+        },
+        "captcha": {
+            "required": "Solving captcha is required!",
+            "invalid": "Captcha is invalid!"
+        }
+    },
+    "form_contact": {
+        "result": {
+            "loading": "Sending ... Please wait a few moments ...",
+            "success": "Your message has been sent! You will receive your answer within 24 hours!",
+            "unexpected": "Unexpected error on the server! Try again or use another way to contact me! We are happy to report the error as well ..."
+        }
+    },
+    "fill_form_or_other_ways": "Fill out the form or use the communication methods below to contact me ...",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "message": "Message",
+    "send_message": "Send Message",
+    "contact_form": {
+        "not_working": "Our contact form is not working at the moment ... contact us in other ways ..."
+    },
+    "footer": "©{year} Amirhossein Fazli | All rights reserved.",
+    "source": "source"
+}

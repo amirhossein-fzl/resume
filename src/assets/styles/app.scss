@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./fonts.scss";
+
+body {
+    @apply font-main dark:bg-slate-900 dark:text-slate-500;
+}
+
