@@ -6,7 +6,10 @@ import { RouterView } from "vue-router";
 <template>
     <div class="container cty">
         <Navigation />
-        <RouterView />
+        
+        <div class="content">
+            <RouterView />
+        </div>
     </div>
 </template>
 
@@ -14,5 +17,9 @@ import { RouterView } from "vue-router";
 // Container Y padding (cty)
 .cty {
     @apply py-3;
+}
+
+.content {
+    @apply mt-20;
 }
 </style>
