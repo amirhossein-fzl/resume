@@ -9,7 +9,10 @@ import ThemeSwitcher from './ThemeSwitcher.vue';
 
         <ul class="links">
             <li>
-                <a href="/">{{ $t("about_me") }}</a>
+                <a href="/">{{ $t("me") }}</a>
+            </li>
+            <li>
+                <a href="#/about">{{ $t("about_me") }}</a>
             </li>
             <li>
                 <a href="#/skills">{{ $t("my_skills") }}</a>
