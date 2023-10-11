@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import LanguageSwitcher from './LanguageSwitcher.vue';
 import ThemeSwitcher from './ThemeSwitcher.vue';
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>
@@ -9,7 +10,7 @@ import ThemeSwitcher from './ThemeSwitcher.vue';
 
         <ul class="links">
             <li>
-                <a href="/">{{ $t("me") }}</a>
+                <RouterLink to="/" exact-active-class="active">{{ $t("me") }}</RouterLink>
             </li>
             <li>
                 <a href="#/about">{{ $t("about_me") }}</a>
@@ -39,11 +40,26 @@ nav {
     @apply dark:bg-slate-800 dark:shadow-dark;
 }
 
+.links-container {
+    @apply relative;
+}
+
+.indicator {
+    @apply bg-blue-500 h-1 rounded;
+}
+
 .links {
     @apply flex gap-4 dark:text-slate-100 font-medium;
 
     a {
         @apply duration-300;
+        &.active {
+            @apply flex flex-col justify-center items-center text-blue-500;
+            &::after {
+                content: "";
+                @apply bg-blue-500 w-4 h-1 rounded;
+            }
+        }
     }
 
     a:hover {
