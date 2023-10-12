@@ -88,18 +88,6 @@ const close_fullview_photo = () => is_fullview.value = false;
     @apply flex gap-3 mt-5;
 }
 
-.fade {
-    &-enter-active,
-    &-leave-active {
-        @apply duration-300;
-    }
-
-    &-enter-from,
-    &-leave-to {
-        @apply opacity-0 #{!important};
-    }
-}
-
 .scale {
 
     &-enter-active,

@@ -150,19 +150,6 @@ nav {
     @apply md:hidden;
 }
 
-.fade {
-
-    &-enter-active,
-    &-leave-active {
-        @apply duration-300;
-    }
-
-    &-enter-from,
-    &-leave-to {
-        @apply opacity-0;
-    }
-}
-
 .slide {
 
     &-enter-active,

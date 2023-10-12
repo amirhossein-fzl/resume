@@ -11,3 +11,15 @@ body {
 .row {
     @apply flex flex-row;
 }
+
+.fade {
+    &-enter-active,
+    &-leave-active {
+        @apply duration-300;
+    }
+
+    &-enter-from,
+    &-leave-to {
+        @apply opacity-0 #{!important};
+    }
+}
