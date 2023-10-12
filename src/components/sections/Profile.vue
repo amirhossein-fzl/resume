@@ -5,11 +5,18 @@ import InstagramIcon from "@/assets/svg/icons/instagram.svg?raw";
 import LinkedinIcon from "@/assets/svg/icons/linkedin.svg?raw";
 import TelegramIcon from "@/assets/svg/icons/telegram.svg?raw";
 import TwitterIcon from "@/assets/svg/icons/twitter.svg?raw";
+import { type Ref, ref } from "vue";
+
+const is_fullview: Ref<boolean> = ref(false);
+
+const open_fullview_photo = () => is_fullview.value = true;
+const close_fullview_photo = () => is_fullview.value = false;
 </script>
 
 <template>
     <div class="prof-container">
-        <img src="/img/amir-developer.jpg" role="button" alt="Amirhossein Fzli photo" class="avatar" />
+        <img src="/img/amir-developer.jpg" role="button" @click="open_fullview_photo" alt="Amirhossein Fzli photo"
+            class="avatar" />
         <div class="prof-info">
             <h1 class="name">{{ $t("my_name") }}</h1>
             <h2 class="job">{{ $t("job") }}</h2>
@@ -37,6 +44,16 @@ import TwitterIcon from "@/assets/svg/icons/twitter.svg?raw";
                 </a>
             </div>
         </div>
+
+        <!-- Fullview profile photo -->
+        <Transition name="fade">
+            <div class="backdrop" v-if="is_fullview" @click="close_fullview_photo"></div>
+        </Transition>
+
+        <Transition name="scale">
+            <img src="/img/amir-developer.jpg" v-if="is_fullview" alt="Amirhossein Fzli photo" class="fw-img" />
+        </Transition>
+        <!-- End fullview profile photo -->
     </div>
 </template>
 
@@ -69,5 +86,42 @@ import TwitterIcon from "@/assets/svg/icons/twitter.svg?raw";
 
 .social-networks {
     @apply flex gap-3 mt-5;
+}
+
+.fade {
+    &-enter-active,
+    &-leave-active {
+        @apply duration-300;
+    }
+
+    &-enter-from,
+    &-leave-to {
+        @apply opacity-0 #{!important};
+    }
+}
+
+.scale {
+
+    &-enter-active,
+    &-leave-active {
+        @apply duration-300;
+    }
+
+    &-enter-to {
+        @apply scale-100;
+    }
+
+    &-enter-from,
+    &-leave-to {
+        @apply scale-0;
+    }
+}
+
+.backdrop {
+    @apply w-full h-full fixed bg-black opacity-50 z-10 top-0 left-0;
+}
+
+.fw-img {
+    @apply m-auto z-20 fixed w-96 h-auto inset-0;
 }
 </style>
