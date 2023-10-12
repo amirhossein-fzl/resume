@@ -4,22 +4,35 @@ import ThemeSwitcher from './ThemeSwitcher.vue';
 import { RouterLink } from 'vue-router';
 import Icon from "../Icon.vue";
 import BarsIcon from "@/assets/svg/icons/bars.svg?raw";
-import { ref } from "vue";
+import { ref, onMounted, type Ref } from "vue";
+import CloseIcon from "@/assets/svg/icons/close.svg?raw";
 
-const side_is_open = ref(false);
+const side_is_open: Ref<boolean> = ref(false);
+const nav_is_fixed: Ref<boolean> = ref(false);
+// @ts-ignore
+const nav_el: Ref<HTMLElement> = ref(null);
 
 const open_side = () => {
     side_is_open.value = true;
-}
+};
 
 const close_side = () => {
     side_is_open.value = false;
-}
+};
+
+onMounted(() => {
+    // @ts-ignore
+    document.addEventListener("scroll", _ => {
+        if (window.outerWidth < 768) {
+            nav_is_fixed.value = window.pageYOffset > nav_el.value.offsetHeight;
+        }
+    });
+});
 
 </script>
 
 <template>
-    <nav>
+    <nav :class="{ 'sticky-nav': nav_is_fixed }" ref="nav_el">
         <button @click="open_side" class="menu-bars">
             <Icon :icon="BarsIcon" :size="26" />
         </button>
@@ -30,7 +43,32 @@ const close_side = () => {
         </Transition>
         <Transition name="slide">
             <div class="menu-side" v-if="side_is_open">
-                <button @click="close_side">Close</button>
+                <div class="m-content">
+                    <button class="close-menu-btn" @click="close_side">
+                        <Icon :icon="CloseIcon" :size="28" />
+                    </button>
+
+                    <ul class="menu-links">
+                        <li>
+                            <RouterLink to="/" exact-active-class="m-active">{{ $t("me") }}</RouterLink>
+                        </li>
+                        <li>
+                            <a href="#/about">{{ $t("about_me") }}</a>
+                        </li>
+                        <li>
+                            <a href="#/skills">{{ $t("my_skills") }}</a>
+                        </li>
+                        <li>
+                            <a href="#/services">{{ $t("my_services") }}</a>
+                        </li>
+                        <li>
+                            <a href="#/portfolio">{{ $t("my_portfolios") }}</a>
+                        </li>
+                        <li>
+                            <a href="#/contact">{{ $t("contact_me") }}</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </Transition>
         <!-- End Menu Siderbar -->
@@ -69,13 +107,43 @@ nav {
     @apply dark:bg-slate-800 dark:shadow-dark;
 }
 
+.sticky-nav {
+    @apply top-0 sticky rounded-t-none;
+}
+
 .backdrop {
-    @apply absolute z-10 inset-0 w-full h-full bg-slate-900 opacity-30;
+    @apply absolute z-10 inset-0 w-full h-full bg-black opacity-30;
 }
 
 .menu-side {
     @apply ltr:left-0 rtl:right-0 z-20;
-    @apply ltr:top-0 absolute bg-slate-800 h-full w-10/12;
+    @apply dark:bg-slate-800 dark:shadow-dark bg-white shadow-light;
+    @apply top-0 fixed h-full w-[16rem] overflow-scroll;
+}
+
+// Menu content
+.m-content {
+    @apply px-3 py-4 flex flex-col gap-10;
+}
+
+.close-menu-btn {
+    @apply text-red-500 ltr:ml-auto rtl:mr-auto block;
+}
+
+.menu-links {
+    li {
+        @apply px-4 py-2 rounded-xl duration-300 font-semibold;
+        @apply dark:bg-slate-700 bg-slate-200 shadow-light;
+
+        &:not(first-child) {
+            @apply mt-2;
+        }
+
+        // Menu active
+        &:has(> a.m-active) {
+            @apply bg-blue-500 text-white;
+        }
+    }
 }
 
 .menu-bars {
@@ -83,25 +151,30 @@ nav {
 }
 
 .fade {
-    &-enter-active, &-leave-active {
+
+    &-enter-active,
+    &-leave-active {
         @apply duration-300;
     }
 
-    &-enter-from, &-leave-to {
+    &-enter-from,
+    &-leave-to {
         @apply opacity-0;
     }
 }
 
 .slide {
-    &-enter-active, &-leave-active {
+
+    &-enter-active,
+    &-leave-active {
         @apply duration-300;
     }
 
-    &-enter-from, &-leave-to {
-        // 83.333333% = 10/12
-        @apply ltr:-left-[83.333333%] rtl:-right-[83.333333%];
+    &-enter-from,
+    &-leave-to {
+        @apply ltr:-left-[16rem] rtl:-right-[16rem];
     }
-    
+
     &-enter-to {
         @apply ltr:left-0 rtl:right-0;
     }
