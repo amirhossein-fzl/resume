@@ -132,15 +132,19 @@ nav {
 
 .menu-links {
     li {
-        @apply px-4 py-2 rounded-xl duration-300 font-semibold;
-        @apply dark:bg-slate-700 bg-slate-200 shadow-light;
-
+        @apply overflow-hidden;
         &:not(first-child) {
             @apply mt-2;
         }
+    }
+
+    a {
+        @apply px-4 py-2 rounded-xl duration-300 font-semibold;
+        @apply dark:bg-slate-700 bg-slate-200 shadow-light;
+        @apply block w-full;
 
         // Menu active
-        &:has(> a.m-active) {
+        &.m-active {
             @apply bg-blue-500 text-white;
         }
     }
