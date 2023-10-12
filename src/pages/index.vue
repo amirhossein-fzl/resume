@@ -12,7 +12,7 @@ const age = Math.floor(
 </script>
 
 <template>
-    <div class="row flex-container">
+    <div class="flex-container">
         <div class="item">
             <Transition name="back-in-up" appear>
                 <Profile />
@@ -80,11 +80,11 @@ const age = Math.floor(
 }
 
 .flex-container {
-    @apply gap-2 items-center;
+    @apply gap-12 lg:gap-3 items-center flex flex-col md:flex-row px-4;
 }
 
 .item {
-    @apply w-6/12;
+    @apply w-full md:w-6/12;
 }
 .about-me {
     li {
