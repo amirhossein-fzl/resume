@@ -3,6 +3,10 @@
 @tailwind utilities;
 @import "./fonts.scss";
 
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
 body {
     @apply font-main dark:bg-slate-900 dark:text-slate-400;
     @apply text-slate-900;
