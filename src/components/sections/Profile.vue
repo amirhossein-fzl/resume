@@ -13,7 +13,7 @@ import TwitterIcon from "@/assets/svg/icons/twitter.svg?raw";
         <div class="prof-info">
             <h1 class="name">{{ $t("my_name") }}</h1>
             <h2 class="job">{{ $t("job") }}</h2>
-            <p>{{ $t("short_description") }}</p>
+            <p class="intro">{{ $t("short_description") }}</p>
 
             <div class="social-networks">
                 <a href="https://instagram.com/amirhossein_fzl/" target="_blank">
@@ -43,12 +43,12 @@ import TwitterIcon from "@/assets/svg/icons/twitter.svg?raw";
 <style scoped lang="scss">
 // Profile Container
 .prof-container {
-    @apply flex items-center gap-6;
+    @apply flex flex-col xl:flex-row items-center gap-6;
 }
 
 // Profile Info
 .prof-info {
-    @apply flex flex-col gap-2;
+    @apply flex flex-col gap-2 justify-center xl:items-start items-center;
 }
 
 .avatar {
@@ -56,11 +56,15 @@ import TwitterIcon from "@/assets/svg/icons/twitter.svg?raw";
 }
 
 .name {
-    @apply dark:text-white text-4xl font-black;
+    @apply dark:text-white text-4xl font-black text-center lg:text-start w-fit;
 }
 
 .job {
     @apply text-lg;
+}
+
+.intro {
+    @apply text-center xl:text-start;
 }
 
 .social-networks {
