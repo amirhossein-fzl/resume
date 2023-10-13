@@ -43,7 +43,7 @@ const age = Math.floor(
             </li>
         </Transition>
         <Transition name="list" appear>
-            <li :class="['status', { 'ready-status': my_status == 'ready', 'no-ready-status': my_status != 'ready' }]">
+            <li :class="{ 'ready-status': my_status == 'ready', 'no-ready-status': my_status != 'ready' }">
                 <span>{{ $t("status") }}</span>
                 <span>{{ $t("my_status") }}</span>
             </li>
@@ -74,10 +74,6 @@ const age = Math.floor(
             }
         }
     }
-}
-
-.status {
-    @apply relative overflow-hidden;
 }
 
 .ready-status {
