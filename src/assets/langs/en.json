@@ -10,10 +10,6 @@
     "my_services": "My services",
     "my_portfolios": "My portfolios",
     "contact_me": "Contact me",
-    "about_1": "I have started learning programming professionally since 2018 and I am still continuing and this cycle continues to infinity ...",
-    "about_2": "In the beginning, I was trained with online courses (video trainings)...but later I was not limited to this source and I use all sources, including videos, texts, documents, videos, blogs, books, etc. ...",
-    "about_3": "I love programming in Rust. And I would like the backend of the websites I write to be in this language ... this language is wonderful!",
-    "about_4": "I like the open source world very much. I love Linux and I program with Linux ... because it gives me more freedom ...",
     "fullname": "Fullname",
     "age": "Age",
     "country": "Country",
@@ -30,6 +26,86 @@
     "os": "Operating system",
     "other": "Others",
     "mobile": "Mobile",
+    "interview": {
+        "inspire": {
+            "ask": "What inspired you to become a programmer?",
+            "answer": [
+                "I think my interest in creating was the main reason why I became a programmer. Before programming, I was interested in electronics. Because I could create a product in this field as well and I enjoy this work. Finally, in 2017 I started programming by learning PHP."
+            ]
+        },
+        "enjoy_in_programming": {
+            "ask": "What do you enjoy most about programming?",
+            "answer": [
+                "I am happy to be able to communicate with the hardware of the devices. In a way, it gives me a sense of power. Also, because I create new products by programming, I enjoy it."
+            ]
+        },
+        "most_proficient": {
+            "ask": "What programming languages are you most proficient in?",
+            "answer": [
+                "My most mastery is in the Front-end section in the Vue and Svelte framework. Because both are simple, and that learning the two was for me before the framework is not ineffective.",
+                "Also, on the back-end side, I have the most mastery in PHP and JavaScript. I have mostly used Laravel framework in PHP.",
+                "With all this, it doesn't mean that I don't master other languages and other frameworks. Only in the languages and frameworks mentioned, I have more experience."
+            ]
+        },
+        "up_to_date": {
+            "ask": "How do you stay up-to-date on the latest programming languages, frameworks, and best practices? ",
+            "answer": [
+                "By reading the blog of languages and frameworks and also following their page on social pages, I keep track of new versions and features. Also, by studying the documents and also their Release page, I study the new features of the technologies."
+            ]
+        },
+        "goals": {
+            "ask": "What are some of your programming-related goals and dreams for the future?",
+            "answer": [
+                "The biggest goal I have in programming right now is to create a cross-platform UI Toolkit library that can be implemented in embedded."
+            ]
+        },
+        "advice": {
+            "ask": "What advice would you give to someone just starting out in programming?",
+            "answer": [
+                "I would like to say that programming has many challenges and issues. Therefore, if you are not interested in this job, do not waste your time.",
+                "Take care of your health and finish the path you have chosen based on the road map that other people have already written. Use the opinions and experiences of experienced people in your field."
+            ]
+        },
+        "impact": {
+            "ask": "How has programming impacted your life?",
+            "answer": [
+                "The advice of Steve Jobs applies more to me in this case. They say: Everyone should learn computer programming nowadays. Because programming teaches you how to think.",
+                "Programming has changed the way I think and make decisions when facing various challenges in life. I prefer rational decision to emotional decision."
+            ]
+        },
+        "programming_future": {
+            "ask": "What do you think the future holds for the programming field?",
+            "answer": [
+                "In my opinion, programmers are the gods of computers. With the development of the digital field, and with the use of new technologies, the need for programmers is increasing day by day. I see the future of programming very well."
+            ]
+        },
+        "other_interests": {
+            "ask": "Outside of programming, what other interests or hobbies do you have?",
+            "answer": [
+                "I am very interested in blockchain and electronics. I really like everything to be decentralized on the Internet. Because the security of people is provided on the Internet.",
+                "I like futsal and I go to futsal once a week. I am also interested in reading books."
+            ]
+        },
+        "good_programmer": {
+            "ask": "What do you think makes a good programmer? What skills and qualities are most important?",
+            "answer": [
+                "In my opinion, a good programmer is someone who has written his code according to existing standards. Comment the codes and use design patterns as much as possible. Also, write tests for your codes."
+            ]
+        },
+        "debugging": {
+            "ask": "How do you approach debugging code? Do you have a systematic process?",
+            "answer": [
+                "When encountering a bug, to find it, I first identify the codes that are involved in the problem and check line by line to find the code that causes the problem. Of course, in this way, I use the debugging tools available in that language."
+            ]
+        },
+        "resources_community": {
+            "ask": "What programming resources or communities do you find most valuable?",
+            "answer": [
+                "In the first place, I believe that no source can be better than the official source (official documentation). Video resources and books are also very good.",
+                "Stackoverflow, Reddit, Telegram and Discord communities help me a lot."
+            ]
+        }
+    },
     "bootstrap": {
         "title": "Bootstrap",
         "value": "The best and most popular user interface library for fast and responsive site building is undoubtedly Bootstrap ... This library is extremely powerful and extensible and can be customized with Sass ..."
