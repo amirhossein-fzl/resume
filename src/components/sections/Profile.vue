@@ -73,7 +73,7 @@ const close_fullview_photo = () => is_fullview.value = false;
 }
 
 .name {
-    @apply dark:text-white text-4xl font-black text-center lg:text-start w-fit;
+    @apply dark:text-white text-4xl font-bold text-center lg:text-start w-fit;
 }
 
 .job {
