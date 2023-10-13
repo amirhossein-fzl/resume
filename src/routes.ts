@@ -1,7 +1,7 @@
 import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
-import Index from "@/pages/index.vue";
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
-
+import Index from "@/pages/index.vue";
+import About from "@/pages/about.vue";
 
 const routes: RouteRecordRaw[] = [
     {
@@ -11,6 +11,10 @@ const routes: RouteRecordRaw[] = [
             {
                 path: "/",
                 component: Index
+            },
+            {
+                path: "/about",
+                component: About
             }
         ]
     },

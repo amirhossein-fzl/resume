@@ -53,7 +53,7 @@ onMounted(() => {
                             <RouterLink to="/" exact-active-class="m-active">{{ $t("me") }}</RouterLink>
                         </li>
                         <li>
-                            <a href="#/about">{{ $t("about_me") }}</a>
+                            <RouterLink to="/about" exact-active-class="m-active">{{ $t("about_me") }}</RouterLink>
                         </li>
                         <li>
                             <a href="#/skills">{{ $t("my_skills") }}</a>
@@ -80,7 +80,7 @@ onMounted(() => {
                 <RouterLink to="/" exact-active-class="active">{{ $t("me") }}</RouterLink>
             </li>
             <li>
-                <a href="#/about">{{ $t("about_me") }}</a>
+                <RouterLink to="/about">{{ $t("about_me") }}</RouterLink>
             </li>
             <li>
                 <a href="#/skills">{{ $t("my_skills") }}</a>
