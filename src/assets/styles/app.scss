@@ -27,3 +27,30 @@ body {
         @apply opacity-0 #{!important};
     }
 }
+
+.page-title {
+    @apply font-black text-3xl dark:text-white w-fit mx-auto;
+    @apply mb-16;
+
+    &::after {
+        content: "";
+        @apply w-7 h-1.5 bg-blue-500 rounded block mx-auto mt-2;
+    }
+}
+
+section.content {
+    h2 {
+        @apply text-xl font-semibold dark:text-white mb-3;
+        &:not(:first-child) {
+            @apply mt-10;
+        }
+    }
+
+    p {
+        @apply text-base font-medium mb-2;
+    }
+
+    a {
+        @apply text-blue-500 underline underline-offset-4 decoration-dotted;
+    }
+}
