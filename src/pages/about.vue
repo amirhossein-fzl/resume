@@ -31,9 +31,6 @@ import Info from '@/components/sections/Info.vue';
             <h2>{{ $t("interview.up_to_date.ask") }}</h2>
             <p>{{ $t("interview.up_to_date.answer[0]") }}</p>
 
-            <h2>{{ $t("interview.up_to_date.ask") }}</h2>
-            <p>{{ $t("interview.up_to_date.answer[0]") }}</p>
-
             <h2>{{ $t("interview.goals.ask") }}</h2>
             <p>{{ $t("interview.goals.answer[0]") }}</p>
 

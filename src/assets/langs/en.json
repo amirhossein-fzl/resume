@@ -50,7 +50,7 @@
         "up_to_date": {
             "ask": "How do you stay up-to-date on the latest programming languages, frameworks, and best practices? ",
             "answer": [
-                "By reading the blog of languages and frameworks and also following their page on social pages, I keep track of new versions and features. Also, by studying the documents and also their Release page, I study the new features of the technologies."
+                "I keep track of new versions and features by reading the languages and frameworks blog and also following their pages on social media. I also learn the new features of the technologies by reading the documents and also their Release page."
             ]
         },
         "goals": {
@@ -87,7 +87,7 @@
             ]
         },
         "good_programmer": {
-            "ask": "What do you think makes a good programmer? What skills and qualities are most important?",
+            "ask": "Who do you think is a good programmer? What skills and attributes are most important?",
             "answer": [
                 "In my opinion, a good programmer is someone who has written his code according to existing standards. Comment the codes and use design patterns as much as possible. Also, write tests for your codes."
             ]
