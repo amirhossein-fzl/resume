@@ -80,7 +80,7 @@ onMounted(() => {
                 <RouterLink to="/" exact-active-class="active">{{ $t("me") }}</RouterLink>
             </li>
             <li>
-                <RouterLink to="/about">{{ $t("about_me") }}</RouterLink>
+                <RouterLink to="/about" exact-active-class="active">{{ $t("about_me") }}</RouterLink>
             </li>
             <li>
                 <a href="#/skills">{{ $t("my_skills") }}</a>
@@ -101,6 +101,16 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
+@keyframes widthAnime {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--width-to);
+    }
+}
+
 nav {
     @apply bg-white shadow-light p-4 w-full rounded-xl;
     @apply flex justify-between items-center;
@@ -133,6 +143,7 @@ nav {
 .menu-links {
     li {
         @apply overflow-hidden;
+
         &:not(first-child) {
             @apply mt-2;
         }
@@ -188,18 +199,20 @@ nav {
     a {
         @apply duration-300;
 
+        &:hover {
+            @apply text-blue-400;
+        }
+
         &.active {
             @apply flex flex-col justify-center items-center text-blue-500;
 
             &::after {
                 content: "";
-                @apply bg-blue-500 w-4 h-1 rounded;
+                --width-to: theme("spacing.4");
+                animation: widthAnime 0.3s ease;
+                @apply bg-blue-500 w-4 h-1 rounded mt-1;
             }
         }
-    }
-
-    a:hover {
-        @apply text-blue-400;
     }
 }
 </style>
