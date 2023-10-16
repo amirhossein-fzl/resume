@@ -21,11 +21,14 @@
     "status": "Status",
     "my_status": "Ready",
     "languages": "Languages",
-    "freamworks": "Freamworks",
+    "backend_freamworks": "Back-end freamworks",
     "databases": "Databases",
     "os": "Operating system",
     "other": "Others",
     "mobile": "Mobile",
+    "key_skills": "Key Skills",
+    "css": "CSS",
+    "experience": "{year} years experience",
     "interview": {
         "inspire": {
             "ask": "What inspired you to become a programmer?",

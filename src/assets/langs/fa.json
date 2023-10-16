@@ -21,11 +21,14 @@
     "status": "وضعیت",
     "my_status": "آماده",
     "languages": "زبان ها",
-    "freamworks": "چارچوب ها",
+    "backend_freamworks": "فریمورک بک‌اند",
     "databases": "پایگاه داده ها",
     "os": "سیستم عامل",
     "other": "سایر",
     "mobile": "موبایل",
+    "key_skills": "مهارت‌های کلیدی",
+    "experience": "{year} سال تجربه",
+    "css": "CSS",
     "interview": {
         "inspire": {
             "ask": "چه چیزی باعث شد که برنامه‌نویس شوید؟",
