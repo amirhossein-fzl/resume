@@ -21,6 +21,7 @@ import VueIcon from "@/assets/svg/icons/vue.svg?raw";
 import WasmIcon from "@/assets/svg/icons/wasm.svg?raw";
 import DartIcon from "@/assets/svg/icons/dart.svg?raw";
 import FlutterIcon from "@/assets/svg/icons/flutter.svg?raw";
+import DockerIcon from "@/assets/svg/icons/docker.svg?raw";
 </script>
 
 <template>
