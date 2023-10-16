@@ -96,6 +96,16 @@ import FlutterIcon from "@/assets/svg/icons/flutter.svg?raw";
                 </div>
             </div>
 
+            <h2 class="sub-title">{{ $t("databases") }}</h2>
+            <div class="skills">
+                <div class="sk-item">
+                    <Skill :icon="PostgresqlIcon" :name="$t('postgresql.title')" :experience="1" />
+                </div>
+                <div class="sk-item">
+                    <Skill :icon="MysqlIcon" :name="$t('mysql.title')" :experience="3" />
+                </div>
+            </div>
+
             <h2 class="sub-title">{{ $t("css") }}</h2>
             <div class="skills">
                 <div class="sk-item">
@@ -120,16 +130,6 @@ import FlutterIcon from "@/assets/svg/icons/flutter.svg?raw";
             <div class="skills">
                 <div class="sk-item">
                     <Skill :icon="LinuxIcon" :name="$t('linux.title')" :experience="3" />
-                </div>
-            </div>
-
-            <h2 class="sub-title">{{ $t("databases") }}</h2>
-            <div class="skills">
-                <div class="sk-item">
-                    <Skill :icon="PostgresqlIcon" :name="$t('postgresql.title')" :experience="1" />
-                </div>
-                <div class="sk-item">
-                    <Skill :icon="MysqlIcon" :name="$t('mysql.title')" :experience="3" />
                 </div>
             </div>
         </div>
