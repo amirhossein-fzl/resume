@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "./fonts.scss";
+@import './fonts.scss';
 
 * {
     -webkit-tap-highlight-color: transparent;
@@ -35,6 +35,19 @@ body {
     &::after {
         content: "";
         @apply w-7 h-1.5 bg-blue-500 rounded block mx-auto mt-2;
+    }
+}
+
+.sub-title {
+    @apply font-semibold text-2xl dark:text-white mb-5;
+
+    &::after {
+        content: "";
+        @apply w-4 h-1.5 bg-blue-500 rounded block mt-1 duration-300;
+
+        &:hover {
+            @apply w-7;
+        }
     }
 }
 
