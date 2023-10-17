@@ -7,7 +7,9 @@ export function loadTheme() {
     if (theme == null) {
         localStorage.setItem('theme', themeStore.value);
         theme = themeStore.value;
-    } else if (theme == 'dark') {
+    }
+
+    if (theme == 'dark') {
         document.documentElement.classList.add('dark');
     } else {
         document.documentElement.classList.remove('dark');
