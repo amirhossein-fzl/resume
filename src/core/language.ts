@@ -16,7 +16,9 @@ export function loadLanguage() {
     if (lang == null) {
         localStorage.setItem("lang", "en");
         lang = "en";
-    } else if (lang == "fa") {
+    }
+
+    if (lang == "fa") {
         document.documentElement.dir = "rtl";
     } else {
         document.documentElement.dir = "ltr";
