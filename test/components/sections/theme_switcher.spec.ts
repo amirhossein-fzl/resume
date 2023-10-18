@@ -32,9 +32,9 @@ test('icon component', async () => {
         },
     }).element.innerHTML;
 
-    expect(wrapper.findComponent(Icon).exists());
+    expect(wrapper.findComponent(Icon).exists()).toBe(true);
     expect(wrapper.findComponent(Icon).props('size')).toEqual(28);
-    expect(wrapper.findComponent(Icon).element.classList.contains('icon'));
+    expect(wrapper.findComponent(Icon).element.classList.contains('icon')).toBe(true);
 
     await wrapper.findComponent(ThemeSwitcher).trigger('click');
 
@@ -42,11 +42,11 @@ test('icon component', async () => {
         expect(wrapper.findComponent(Icon).element.innerHTML).toEqual(
             light_icon
         );
-        expect(wrapper.findComponent(Icon).element.classList.contains('sc'));
+        expect(wrapper.findComponent(Icon).element.classList.contains('sc')).toBe(true);
     } else {
         expect(wrapper.findComponent(Icon).element.innerHTML).toEqual(
             dark_icon
         );
-        expect(wrapper.findComponent(Icon).element.classList.contains('mc'));
+        expect(wrapper.findComponent(Icon).element.classList.contains('mc')).toBe(true);
     }
 });

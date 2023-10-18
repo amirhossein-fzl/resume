@@ -17,8 +17,8 @@ test('icon component', async () => {
         },
     });
 
-    expect(wrapper.find('article.skill').exists());
-    expect(wrapper.findComponent(Icon).exists());
+    expect(wrapper.find('article.skill').exists()).toBe(true);
+    expect(wrapper.findComponent(Icon).exists()).toBe(true);
     expect(wrapper.getComponent(Icon).props("size")).toEqual(70);
     expect(wrapper.find('.info .name').text()).toEqual('Typescript');
     expect(wrapper.find('.info .hist').text()).toEqual(

@@ -18,13 +18,13 @@ const wrapper = mount(App, {
 describe('plugins test', () => {
     test('router test', async () => {
         await router.push('/');
-        expect(wrapper.getComponent(Index));
+        expect(wrapper.findComponent(Index).exists()).toBe(true);
 
         await router.replace('/about');
-        expect(wrapper.getComponent(About));
+        expect(wrapper.findComponent(About).exists()).toBe(true);
 
         await router.replace('/skills');
-        expect(wrapper.getComponent(Skills));
+        expect(wrapper.findComponent(Skills).exists()).toBe(true);
     });
 
     test('pinia stores test', async () => {
