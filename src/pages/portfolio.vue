@@ -7,6 +7,8 @@ import StudentCapIcon from "@/assets/svg/icons/student-cap.svg?raw";
 
 <template>
     <WithProfileLayout>
+        <h1 class="page-title">{{ $t("my_portfolios") }}</h1>
+
         <Timeline :icon="StudentCapIcon" :title="$t('education')">
             <TimelineItem :title="$t('diploma.label')" :time_range="$t('2023')">
                 {{ $t("diploma.description") }}

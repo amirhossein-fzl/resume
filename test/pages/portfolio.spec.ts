@@ -14,6 +14,7 @@ test("portfolio page test", async () => {
     });
 
     expect(wrapper.findComponent(WithProfileLayout).exists()).toBe(true);
+    expect(wrapper.find(".page-title").text()).toBe(i18n.global.t("my_portfolios"));
     expect(wrapper.getComponent(Timeline).props("title")).toBe(i18n.global.t("education"));
     expect(wrapper.getComponent(Timeline).getComponent(TimelineItem).props("title")).toBe(i18n.global.t("diploma.label"));
 });
