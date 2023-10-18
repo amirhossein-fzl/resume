@@ -3,6 +3,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.vue";
 import Index from "@/pages/index.vue";
 import About from "@/pages/about.vue";
 import Skills from "@/pages/skills.vue";
+import Portfolio from "@/pages/portfolio.vue";
 
 const routes: RouteRecordRaw[] = [
     {
@@ -20,6 +21,10 @@ const routes: RouteRecordRaw[] = [
             {
                 path: "/skills",
                 component: Skills
+            },
+            {
+                path: "/portfolio",
+                component: Portfolio
             },
         ]
     },

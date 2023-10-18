@@ -7,6 +7,7 @@ import i18n from '../src/plugins/i18n';
 import Index from '../src/pages/index.vue';
 import About from '../src/pages/about.vue';
 import Skills from '../src/pages/skills.vue';
+import Portfolio from '@/pages/portfolio.vue';
 
 const pinia = createPinia();
 const wrapper = mount(App, {
@@ -25,6 +26,9 @@ describe('plugins test', () => {
 
         await router.replace('/skills');
         expect(wrapper.findComponent(Skills).exists()).toBe(true);
+
+        await router.replace('/portfolio');
+        expect(wrapper.findComponent(Portfolio).exists()).toBe(true);
     });
 
     test('pinia stores test', async () => {
