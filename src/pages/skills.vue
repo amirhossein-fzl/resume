@@ -152,7 +152,7 @@ import FlutterIcon from "@/assets/svg/icons/flutter.svg?raw";
 }
 
 .sk-item {
-    @apply w-full sm:w-6/12 md:w-4/12 lg:w-3/12 p-4;
+    @apply w-full sm:w-6/12 md:w-4/12 lg:w-3/12 px-4 py-6;
 }
 
 // Fix logo colors conflicts ...
