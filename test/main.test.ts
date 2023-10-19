@@ -8,6 +8,7 @@ import Index from '../src/pages/index.vue';
 import About from '../src/pages/about.vue';
 import Skills from '../src/pages/skills.vue';
 import Portfolio from '@/pages/portfolio.vue';
+import Contact from '@/pages/contact.vue';
 
 const pinia = createPinia();
 const wrapper = mount(App, {
@@ -29,6 +30,9 @@ describe('plugins test', () => {
 
         await router.replace('/portfolio');
         expect(wrapper.findComponent(Portfolio).exists()).toBe(true);
+
+        await router.replace('/contact');
+        expect(wrapper.findComponent(Contact).exists()).toBe(true);
     });
 
     test('pinia stores test', async () => {

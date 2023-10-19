@@ -4,6 +4,7 @@ import Index from "@/pages/index.vue";
 import About from "@/pages/about.vue";
 import Skills from "@/pages/skills.vue";
 import Portfolio from "@/pages/portfolio.vue";
+import Contact from "@/pages/contact.vue";
 
 const routes: RouteRecordRaw[] = [
     {
@@ -25,6 +26,10 @@ const routes: RouteRecordRaw[] = [
             {
                 path: "/portfolio",
                 component: Portfolio
+            },
+            {
+                path: "/contact",
+                component: Contact
             },
         ]
     },
