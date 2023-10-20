@@ -6,6 +6,8 @@ import Icon from "../Icon.vue";
 import BarsIcon from "@/assets/svg/icons/bars.svg?raw";
 import { ref, onMounted, type Ref } from "vue";
 import CloseIcon from "@/assets/svg/icons/close.svg?raw";
+import config from "@config";
+import router from '@/routes';
 
 const side_is_open: Ref<boolean> = ref(false);
 const nav_is_fixed: Ref<boolean> = ref(false);
@@ -19,6 +21,10 @@ const open_side = () => {
 const close_side = () => {
     side_is_open.value = false;
 };
+
+router.afterEach(() => {
+    side_is_open.value = false;
+});
 
 onMounted(() => {
     // @ts-ignore
@@ -49,23 +55,8 @@ onMounted(() => {
                     </button>
 
                     <ul class="menu-links">
-                        <li>
-                            <RouterLink to="/" exact-active-class="m-active">{{ $t("me") }}</RouterLink>
-                        </li>
-                        <li>
-                            <RouterLink to="/about" exact-active-class="m-active">{{ $t("about_me") }}</RouterLink>
-                        </li>
-                        <li>
-                            <RouterLink to="/skills" exact-active-class="m-active">{{ $t("my_skills") }}</RouterLink>
-                        </li>
-                        <li>
-                            <a href="#/services">{{ $t("my_services") }}</a>
-                        </li>
-                        <li>
-                            <RouterLink to="/portfolio" exact-active-class="m-active">{{ $t("my_portfolios") }}</RouterLink>
-                        </li>
-                        <li>
-                            <RouterLink to="/contact" exact-active-class="m-active">{{ $t("contact_me") }}</RouterLink>
+                        <li v-for="link in config.navigation_links">
+                            <RouterLink :to="link.link" exact-active-class="m-active">{{ $t(link.label) }}</RouterLink>
                         </li>
                     </ul>
                 </div>
@@ -76,23 +67,8 @@ onMounted(() => {
         <LanguageSwitcher class="lang-sw" />
 
         <ul class="links">
-            <li>
-                <RouterLink to="/" exact-active-class="active">{{ $t("me") }}</RouterLink>
-            </li>
-            <li>
-                <RouterLink to="/about" exact-active-class="active">{{ $t("about_me") }}</RouterLink>
-            </li>
-            <li>
-                <RouterLink to="/skills" exact-active-class="active">{{ $t("my_skills") }}</RouterLink>
-            </li>
-            <li>
-                <a href="#/services">{{ $t("my_services") }}</a>
-            </li>
-            <li>
-                <RouterLink to="/portfolio" exact-active-class="active">{{ $t("my_portfolios") }}</RouterLink>
-            </li>
-            <li>
-                <RouterLink to="/contact" exact-active-class="active">{{ $t("contact_me") }}</RouterLink>
+            <li v-for="link in config.navigation_links">
+                <RouterLink :to="link.link" exact-active-class="active">{{ $t(link.label) }}</RouterLink>
             </li>
         </ul>
 

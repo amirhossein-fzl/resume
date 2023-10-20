@@ -11,5 +11,27 @@
         "github": "https://github.com/amirhossein-fzl/",
         "linkedin": "https://www.linkedin.com/in/amirhossein-fazli-b7249026a/",
         "x": "https://x.com/amirhossein_fzl/"
-    }
+    },
+    "navigation_links": [
+        {
+            "label": "me",
+            "link": "/"
+        },
+        {
+            "label": "about_me",
+            "link": "/about"
+        },
+        {
+            "label": "my_skills",
+            "link": "/skills"
+        },
+        {
+            "label": "my_portfolios",
+            "link": "/portfolio"
+        },
+        {
+            "label": "contact_me",
+            "link": "/contact"
+        }
+    ]
 }
