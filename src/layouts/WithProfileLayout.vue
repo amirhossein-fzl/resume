@@ -5,7 +5,9 @@ import Profile from '@/components/sections/Profile.vue';
 <template>
     <div class="ct">
         <div class="item">
-            <Profile />
+            <Transition name="scale" appear>
+                <Profile />
+            </Transition>
         </div>
         <div>
             <slot />
@@ -20,5 +22,19 @@ import Profile from '@/components/sections/Profile.vue';
 }
 .item {
     @apply w-10/12 sm:w-8/12 mx-auto;
+}
+
+.scale {
+    &-enter-active, &-leave-active {
+        @apply duration-300 delay-300;
+    }
+
+    &-enter-to {
+        @apply scale-100;
+    }
+
+    &-enter-from, &-leave-to {
+        @apply opacity-0 scale-90;
+    }
 }
 </style>
