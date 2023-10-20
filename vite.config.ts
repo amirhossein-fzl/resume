@@ -23,5 +23,10 @@ export default defineConfig({
             ]
         },
         minify: "terser",
+        terserOptions: {
+            output: {
+                comments: false
+            }
+        }
     }
 });
