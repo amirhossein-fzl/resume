@@ -21,6 +21,7 @@ export default defineConfig({
             external: [
                 "config.json"
             ]
-        }
+        },
+        minify: "terser",
     }
 });
