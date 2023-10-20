@@ -34,7 +34,7 @@ test('skills page test', async () => {
     });
 
     expect(all_subtitles).toContain(i18n.global.t('languages'));
-    expect(all_subtitles).toContain(i18n.global.t('javascript.title'));
+    expect(all_subtitles).toContain(i18n.global.t('skills.javascript'));
     expect(all_subtitles).toContain(i18n.global.t('backend_freamworks'));
     expect(all_subtitles).toContain(i18n.global.t('databases'));
     expect(all_subtitles).toContain(i18n.global.t('css'));

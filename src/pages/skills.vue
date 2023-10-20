@@ -32,104 +32,104 @@ import FlutterIcon from "@/assets/svg/icons/flutter.svg?raw";
             <h2 class="sub-title">{{ $t("key_skills") }}</h2>
             <div class="skills">
                 <div class="sk-item">
-                    <Skill :icon="PhpIcon" :name="$t('php.title')" :experience="5" />
+                    <Skill :icon="PhpIcon" :name="$t('skills.php')" :experience="5" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="JavascriptIcon" :name="$t('javascript.title')" :experience="4" />
+                    <Skill :icon="JavascriptIcon" :name="$t('skills.javascript')" :experience="4" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="TypescriptIcon" :name="$t('typescript.title')" :experience="3" />
+                    <Skill :icon="TypescriptIcon" :name="$t('skills.typescript')" :experience="3" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="LaravelIcon" :name="$t('laravel.title')" :experience="3" />
+                    <Skill :icon="LaravelIcon" :name="$t('skills.laravel')" :experience="3" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="VueIcon" :name="$t('vue.title')" :experience="3" />
+                    <Skill :icon="VueIcon" :name="$t('skills.vue')" :experience="3" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="SvelteIcon" :name="$t('svelte.title')" :experience="2" />
+                    <Skill :icon="SvelteIcon" :name="$t('skills.svelte')" :experience="2" />
                 </div>
             </div>
 
             <h2 class="sub-title">{{ $t("languages") }}</h2>
             <div class="skills">
                 <div class="sk-item">
-                    <Skill :icon="PhpIcon" :name="$t('php.title')" :experience="5" />
+                    <Skill :icon="PhpIcon" :name="$t('skills.php')" :experience="5" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="JavascriptIcon" :name="$t('javascript.title')" :experience="4" />
+                    <Skill :icon="JavascriptIcon" :name="$t('skills.javascript')" :experience="4" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="TypescriptIcon" :name="$t('typescript.title')" :experience="3" />
+                    <Skill :icon="TypescriptIcon" :name="$t('skills.typescript')" :experience="3" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="DartIcon" :name="$t('dart.title')" :experience="2" />
+                    <Skill :icon="DartIcon" :name="$t('skills.dart')" :experience="2" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="RustIcon" :name="$t('rust.title')" :experience="1" />
+                    <Skill :icon="RustIcon" :name="$t('skills.rust')" :experience="1" />
                 </div>
             </div>
 
-            <h2 class="sub-title">{{ $t("javascript.title") }}</h2>
+            <h2 class="sub-title">{{ $t("skills.javascript") }}</h2>
             <div class="skills">
                 <div class="sk-item">
-                    <Skill :icon="VueIcon" :name="$t('vue.title')" :experience="3" />
+                    <Skill :icon="VueIcon" :name="$t('skills.vue')" :experience="3" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="SvelteIcon" :name="$t('svelte.title')" :experience="2" />
+                    <Skill :icon="SvelteIcon" :name="$t('skills.svelte')" :experience="2" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="ReactIcon" :name="$t('react.title')" :experience="2" />
+                    <Skill :icon="ReactIcon" :name="$t('skills.react')" :experience="2" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="JqueryIcon" :name="$t('jquery.title')" :experience="4" />
+                    <Skill :icon="JqueryIcon" :name="$t('skills.jquery')" :experience="4" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="WasmIcon" :name="$t('wasm.title')" :experience="1" />
+                    <Skill :icon="WasmIcon" :name="$t('skills.wasm')" :experience="1" />
                 </div>
             </div>
 
             <h2 class="sub-title">{{ $t("backend_freamworks") }}</h2>
             <div class="skills">
                 <div class="sk-item">
-                    <Skill :icon="LaravelIcon" :name="$t('laravel.title')" :experience="3" />
+                    <Skill :icon="LaravelIcon" :name="$t('skills.laravel')" :experience="3" />
                 </div>
             </div>
 
             <h2 class="sub-title">{{ $t("databases") }}</h2>
             <div class="skills">
                 <div class="sk-item">
-                    <Skill :icon="PostgresqlIcon" :name="$t('postgresql.title')" :experience="1" />
+                    <Skill :icon="PostgresqlIcon" :name="$t('skills.postgresql')" :experience="1" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="MysqlIcon" :name="$t('mysql.title')" :experience="3" />
+                    <Skill :icon="MysqlIcon" :name="$t('skills.mysql')" :experience="3" />
                 </div>
             </div>
 
             <h2 class="sub-title">{{ $t("css") }}</h2>
             <div class="skills">
                 <div class="sk-item">
-                    <Skill :icon="SassIcon" :name="$t('sass.title')" :experience="4" />
+                    <Skill :icon="SassIcon" :name="$t('skills.sass')" :experience="4" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="TailwindIcon" :name="$t('tailwind.title')" :experience="2" />
+                    <Skill :icon="TailwindIcon" :name="$t('skills.tailwind')" :experience="2" />
                 </div>
                 <div class="sk-item">
-                    <Skill :icon="BootstrapIcon" :name="$t('bootstrap.title')" :experience="4" />
+                    <Skill :icon="BootstrapIcon" :name="$t('skills.bootstrap')" :experience="4" />
                 </div>
             </div>
 
             <h2 class="sub-title">{{ $t("mobile") }}</h2>
             <div class="skills">
                 <div class="sk-item">
-                    <Skill :icon="FlutterIcon" :name="$t('flutter.title')" :experience="2" />
+                    <Skill :icon="FlutterIcon" :name="$t('skills.flutter')" :experience="2" />
                 </div>
             </div>
 
             <h2 class="sub-title">{{ $t("os") }}</h2>
             <div class="skills">
                 <div class="sk-item">
-                    <Skill :icon="LinuxIcon" :name="$t('linux.title')" :experience="3" />
+                    <Skill :icon="LinuxIcon" :name="$t('skills.linux')" :experience="3" />
                 </div>
             </div>
         </div>
