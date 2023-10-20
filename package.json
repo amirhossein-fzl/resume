@@ -10,6 +10,8 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@unhead/ssr": "^1.7.4",
+    "@unhead/vue": "^1.7.4",
     "pinia": "^2.1.6",
     "vue": "^3.3.4",
     "vue-i18n": "^9.5.0",
