@@ -67,3 +67,7 @@ section.content {
         @apply text-blue-500 underline underline-offset-4 decoration-dotted;
     }
 }
+
+.backdrop {
+    @apply w-full h-full fixed bg-black opacity-50 z-[900] top-0 left-0;
+}

@@ -112,10 +112,6 @@ const close_fullview_photo = () => is_fullview.value = false;
     }
 }
 
-.backdrop {
-    @apply w-full h-full fixed bg-black opacity-50 z-10 top-0 left-0;
-}
-
 .fw-img {
     @apply m-auto z-20 fixed w-96 h-auto inset-0;
 }

@@ -119,15 +119,11 @@ nav {
 }
 
 .sticky-nav {
-    @apply top-0 sticky rounded-t-none;
-}
-
-.backdrop {
-    @apply absolute z-10 inset-0 w-full h-full bg-black opacity-30;
+    @apply top-0 sticky rounded-t-none z-[800];
 }
 
 .menu-side {
-    @apply ltr:left-0 rtl:right-0 z-20;
+    @apply ltr:left-0 rtl:right-0 z-[1000];
     @apply dark:bg-slate-800 dark:shadow-dark bg-white shadow-light;
     @apply top-0 fixed h-full w-[16rem] overflow-scroll;
 }
