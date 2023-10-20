@@ -20,8 +20,8 @@ const close_fullview_photo = () => is_fullview.value = false;
         <img src="/img/amir-developer.jpg" role="button" @click="open_fullview_photo" alt="Amirhossein Fzli photo"
             class="avatar" />
         <div class="prof-info">
-            <h1 class="name">{{ $t("my_name") }}</h1>
-            <h2 class="job">{{ $t("job") }}</h2>
+            <span class="name">{{ $t("my_name") }}</span>
+            <span class="job">{{ $t("job") }}</span>
             <p class="intro">{{ $t("short_description") }}</p>
 
             <div class="social-networks">
