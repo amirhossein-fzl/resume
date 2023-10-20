@@ -12,10 +12,12 @@ import { type Ref, onMounted, ref, watch } from "vue";
 import { useTheme } from "@/stores/theme";
 import { Validation } from "@/core/contact-from-validation";
 import type IResult from "@/core/types/contact_from/IResult";
+import config from "@config";
 
 const theme = useTheme();
 // Contact form element
 let form: HTMLFormElement;
+const phone = config.contact.phone.replace(/\s/g, "");
 
 const form_values = ref({
     name: "",
@@ -144,13 +146,13 @@ const submitForm = () => {
 
                     <div class="card">
                         <div class="contact">
-                            <a class="cwl" href="mailto:amirhossein95b@gmail.com">
+                            <a class="cwl" :href="`mailto:${config.contact.email}`">
                                 <span>
                                     <Icon :icon="MailIcon" :size="25" />
                                 </span>
-                                <span>amirhossein95b@gmail.com</span>
+                                <span>{{ config.contact.email }}</span>
                             </a>
-                            <a class="cwl" href="tel:+989142245361">
+                            <a class="cwl" :href="`tel:${phone}`">
                                 <span>
                                     <Icon :icon="PhoneIcon" :size="25" />
                                 </span>
@@ -158,20 +160,20 @@ const submitForm = () => {
                             </a>
 
                             <div class="socials">
-                                <a href="https://t.me/amirhossein_fzl/" target="_blank" class="tg">
+                                <a :href="config.social_networks.telegram" target="_blank" class="tg">
                                     <Icon :icon="TelegramIcon" />
                                 </a>
 
-                                <a href="https://instagram.com/amirhossein_fzl/" target="_blank" class="ig">
+                                <a :href="config.social_networks.instagram" target="_blank" class="ig">
                                     <Icon :icon="InstagramIcon" />
                                 </a>
 
-                                <a href="https://www.linkedin.com/in/amirhossein-fazli-b7249026a/" target="_blank"
+                                <a :href="config.social_networks.linkedin" target="_blank"
                                     class="in">
                                     <Icon :icon="LinkedinIcon" />
                                 </a>
 
-                                <a href="https://twitter.com/amirhossein_fzl/" target="_blank" class="tw">
+                                <a :href="config.social_networks.x" target="_blank" class="tw">
                                     <Icon :icon="XIcon" />
                                 </a>
                             </div>

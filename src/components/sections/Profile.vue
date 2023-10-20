@@ -6,6 +6,7 @@ import LinkedinIcon from "@/assets/svg/icons/linkedin.svg?raw";
 import TelegramIcon from "@/assets/svg/icons/telegram.svg?raw";
 import XIcon from "@/assets/svg/socials/x.svg?raw";
 import { type Ref, ref } from "vue";
+import config from "@config";
 
 const is_fullview: Ref<boolean> = ref(false);
 
@@ -23,23 +24,23 @@ const close_fullview_photo = () => is_fullview.value = false;
             <p class="intro">{{ $t("short_description") }}</p>
 
             <div class="social-networks">
-                <a href="https://instagram.com/amirhossein_fzl/" target="_blank">
+                <a :href="config.social_networks.instagram" target="_blank">
                     <Icon :icon="InstagramIcon" :size="28" stroke="" />
                 </a>
 
-                <a href="https://www.linkedin.com/in/amirhossein-fazli-b7249026a/" target="_blank">
+                <a :href="config.social_networks.linkedin" target="_blank">
                     <Icon :icon="LinkedinIcon" :size="28" stroke="" />
                 </a>
 
-                <a href="https://t.me/amirhossein_fzl/" target="_blank">
+                <a :href="config.social_networks.telegram" target="_blank">
                     <Icon :icon="TelegramIcon" :size="28" stroke="" />
                 </a>
 
-                <a href="https://twitter.com/amirhossein_fzl/" target="_blank">
+                <a :href="config.social_networks.x" target="_blank">
                     <Icon :icon="XIcon" class="tw" :size="28" stroke="" />
                 </a>
 
-                <a href="https://github.com/amirhossein-fzl/" target="_blank">
+                <a :href="config.social_networks.github" target="_blank">
                     <Icon :icon="GithubIcon" class="tw" :size="28" stroke="" />
                 </a>
             </div>

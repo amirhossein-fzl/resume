@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
+import config from "@config";
 
 const i18n = useI18n();
 const my_status = i18n.getLocaleMessage("en")["my_status"].toLowerCase();
 
 const age = Math.floor(
     // @ts-ignore
-    (new Date() - new Date('2005-06-15').getTime()) / 3.15576e10
+    (new Date() - new Date(config.bithday).getTime()) / 3.15576e10
 );
 </script>
 

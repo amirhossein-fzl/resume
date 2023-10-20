@@ -13,6 +13,14 @@ export default defineConfig({
         alias: {
             "@": resolve(__dirname, "src"),
             "@sections": resolve(__dirname, "src/components/sections"),
+            "@config": resolve(__dirname, "config.json"),
+        }
+    },
+    build: {
+        rollupOptions: {
+            external: [
+                "config.json"
+            ]
         }
     }
 });

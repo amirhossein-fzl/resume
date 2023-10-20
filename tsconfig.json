@@ -22,7 +22,8 @@
         "noFallthroughCasesInSwitch": true,
         "paths": {
             "@/*": ["./src/*"],
-            "@sections/*": ["./src/components/sections/*"]
+            "@sections/*": ["./src/components/sections/*"],
+            "@config": ["./config.json"]
         }
     },
     "include": [
