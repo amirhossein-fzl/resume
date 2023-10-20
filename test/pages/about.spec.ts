@@ -3,6 +3,7 @@ import { mount } from '@vue/test-utils';
 import i18n from '@/plugins/i18n';
 import router from '@/routes';
 import { createPinia, setActivePinia } from 'pinia';
+import { createHead } from "@unhead/vue";
 import About from '@/pages/about.vue';
 import Profile from '@/components/sections/Profile.vue';
 import WithProfileLayout from '@/layouts/WithProfileLayout.vue';
@@ -10,9 +11,10 @@ import Info from '@/components/sections/Info.vue';
 
 test('About page test', async () => {
     const pinia = createPinia();
+    const head = createHead();
     const wrapper = mount(About, {
         global: {
-            plugins: [i18n, pinia, router],
+            plugins: [i18n, head, pinia, router],
         },
     });
 

@@ -6,12 +6,14 @@ import { createPinia, setActivePinia } from 'pinia';
 import i18n from '@/plugins/i18n';
 import router from '@/routes';
 import { useTheme } from '@/stores/theme';
+import { createHead } from '@unhead/vue';
 
 test('loadTheme test', async () => {
     const pinia = createPinia();
+    const head = createHead();
     mount(App, {
         global: {
-            plugins: [pinia, i18n, router],
+            plugins: [pinia, head, i18n, router],
         },
     });
 

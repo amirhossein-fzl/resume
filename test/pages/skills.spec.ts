@@ -3,15 +3,17 @@ import { mount } from '@vue/test-utils';
 import i18n from '@/plugins/i18n';
 import router from '@/routes';
 import { createPinia, setActivePinia } from 'pinia';
+import { createHead } from "@unhead/vue";
 import Skills from '@/pages/skills.vue';
 import WithProfileLayout from '@/layouts/WithProfileLayout.vue';
 import Skill from '@/components/Skill.vue';
 
 test('skills page test', async () => {
     const pinia = createPinia();
+    const head = createHead();
     const wrapper = mount(Skills, {
         global: {
-            plugins: [i18n, pinia, router],
+            plugins: [i18n, head, pinia, router],
         },
     });
 

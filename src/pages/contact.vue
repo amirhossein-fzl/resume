@@ -13,6 +13,79 @@ import { useTheme } from "@/stores/theme";
 import { Validation } from "@/core/contact-from-validation";
 import type IResult from "@/core/types/contact_from/IResult";
 import config from "@config";
+import { useHead } from "@unhead/vue";
+
+useHead({
+    title: "Contact - Amirhossein Fazli",
+    link: [
+        {
+            rel: "canonical",
+            href: `${config.url}/contact`,
+        }
+    ],
+    meta: [
+        {
+            name: "title",
+            content: "Contact - Amirhossein Fazli"
+        },
+        {
+            name: "description",
+            content: "Contact Amirhossein Fazli from our contact page."
+        },
+        {
+            name: "keywords",
+            content: "Amirhossein,Fazli,Contact,امیرحسین,فضلی,تماس باما"
+        },
+        {
+            name: "robots",
+            content: "index, follow"
+        },
+
+        // OpenGraph meta tags
+        {
+            property: "og:title",
+            content: "Contact - Amirhossein Fazli",
+        },
+        {
+            property: "og:site_name",
+            content: "Amirhossein fazli personal site",
+        },
+        {
+            property: "og:url",
+            content: `${config.url}/contact`,
+        },
+        {
+            property: "og:description",
+            content: "Contact Amirhossein Fazli from our contact page.",
+        },
+        {
+            property: "og:type",
+            content: "webpage",
+        },
+
+        // Twitter card meta tags
+        {
+            property: "twitter:card",
+            content: "summary_large_image",
+        },
+        {
+            property: "twitter:site",
+            content: config.twitter_username,
+        },
+        {
+            property: "twitter:title",
+            content: "Contact - Amirhossein Fazli",
+        },
+        {
+            property: "twitter:description",
+            content: "Contact Amirhossein Fazli from our contact page.",
+        },
+        {
+            property: "twitter:image",
+            content: "https://amirhossein-fzl-dev.ir/img/amir-developer.jpg",
+        },
+    ]
+});
 
 const theme = useTheme();
 // Contact form element

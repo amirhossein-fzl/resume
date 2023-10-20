@@ -2,15 +2,17 @@ import { test, expect, beforeEach } from 'vitest';
 import { setActivePinia, createPinia } from 'pinia';
 import { useLanguage } from '@/stores/language';
 import { mount } from '@vue/test-utils';
+import { createHead } from '@unhead/vue';
 import App from '@/App.vue';
 import i18n from '@/plugins/i18n';
 import router from '@/routes';
 
 test('useLanguage store test', () => {
     const pinia = createPinia();
+    const head = createHead();
     mount(App, {
         global: {
-            plugins: [i18n, pinia, router],
+            plugins: [i18n, pinia, head, router],
         },
     });
 

@@ -5,12 +5,14 @@ import App from '@/App.vue';
 import i18n from '@/plugins/i18n';
 import router from '@/routes';
 import { useTheme } from '@/stores/theme';
+import { createHead } from '@unhead/vue';
 
 test('useLanguage store test', () => {
     const pinia = createPinia();
+    const head = createHead();
     mount(App, {
         global: {
-            plugins: [i18n, pinia, router],
+            plugins: [i18n, pinia, head, router],
         },
     });
 

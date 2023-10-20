@@ -21,6 +21,85 @@ import VueIcon from "@/assets/svg/icons/vue.svg?raw";
 import WasmIcon from "@/assets/svg/icons/wasm.svg?raw";
 import DartIcon from "@/assets/svg/icons/dart.svg?raw";
 import FlutterIcon from "@/assets/svg/icons/flutter.svg?raw";
+
+import { useHead } from "@unhead/vue";
+import config from "@config";
+
+useHead({
+    title: "Skills - Amirhossein Fazli",
+    link: [
+        {
+            rel: "canonical",
+            href: `${config.url}/skills`,
+        }
+    ],
+    meta: [
+        {
+            name: "title",
+            content: "Skills - Amirhossein Fazli"
+        },
+        {
+            name: "description",
+            content: "See the skills and skill level of Amirhossein Fazli on the skills page."
+        },
+        {
+            name: "keywords",
+            content: "Amirhossein,Fazli,Skills,امیرحسین,فضلی,مهارت ها"
+        },
+        {
+            name: "robots",
+            content: "index, follow"
+        },
+
+        // OpenGraph meta tags
+        {
+            property: "og:title",
+            content: "Skills - Amirhossein Fazli",
+        },
+        {
+            property: "og:site_name",
+            content: "Amirhossein fazli personal site",
+        },
+        {
+            property: "og:url",
+            content: `${config.url}/skills`,
+        },
+        {
+            property: "og:description",
+            content: "See the skills and skill level of Amirhossein Fazli on the skills page.",
+        },
+        {
+            property: "og:type",
+            content: "profile",
+        },
+        {
+            property: "og:image",
+            content: "https://amirhossein-fzl-dev.ir/img/amir-developer.jpg",
+        },
+
+        // Twitter card meta tags
+        {
+            property: "twitter:card",
+            content: "summary_large_image",
+        },
+        {
+            property: "twitter:site",
+            content: config.twitter_username,
+        },
+        {
+            property: "twitter:title",
+            content: "Skills - Amirhossein Fazli",
+        },
+        {
+            property: "twitter:description",
+            content: "See the skills and skill level of Amirhossein Fazli on the skills page.",
+        },
+        {
+            property: "twitter:image",
+            content: "https://amirhossein-fzl-dev.ir/img/amir-developer.jpg",
+        },
+    ]
+});
 </script>
 
 <template>

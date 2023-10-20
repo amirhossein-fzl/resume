@@ -3,15 +3,17 @@ import { mount } from "@vue/test-utils";
 import i18n from "@/plugins/i18n";
 import router from "@/routes";
 import { createPinia, setActivePinia } from "pinia";
+import { createHead } from "@unhead/vue";
 import Index from "@/pages/index.vue";
 import Info from "@/components/sections/Info.vue";
 import Profile from "@/components/sections/Profile.vue";
 
 test("Me page test", async () => {
     const pinia = createPinia();
+    const head = createHead();
     const wrapper = mount(Index, {
         global: {
-            plugins: [i18n, pinia, router]
+            plugins: [i18n, head, pinia, router]
         }
     });
 

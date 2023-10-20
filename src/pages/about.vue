@@ -1,6 +1,80 @@
 <script setup lang="ts">
 import WithProfileLayout from '@/layouts/WithProfileLayout.vue';
 import Info from '@/components/sections/Info.vue';
+import { useHead } from "@unhead/vue";
+import config from "@config";
+
+useHead({
+    title: "About - Amirhossein Fazli",
+    link: [
+        {
+            rel: "canonical",
+            href: `${config.url}/about`,
+        }
+    ],
+    meta: [
+        {
+            name: "title",
+            content: "About - Amirhossein Fazli"
+        },
+        {
+            name: "description",
+            content: "Get more information about Amirhossein Fazli in the about page."
+        },
+        {
+            name: "keywords",
+            content: "Amirhossein,Fazli,About,امیرحسین,فضلی,درباره"
+        },
+        {
+            name: "robots",
+            content: "index, follow"
+        },
+
+        // OpenGraph meta tags
+        {
+            property: "og:title",
+            content: "About - Amirhossein Fazli",
+        },
+        {
+            property: "og:site_name",
+            content: "Amirhossein Fazli personal site",
+        },
+        {
+            property: "og:url",
+            content: `${config.url}/about`,
+        },
+        {
+            property: "og:description",
+            content: "Get more information about Amirhossein Fazli in the about page.",
+        },
+        {
+            property: "og:type",
+            content: "webpage",
+        },
+
+        // Twitter card meta tags
+        {
+            property: "twitter:card",
+            content: "summary_large_image",
+        },
+        {
+            property: "twitter:site",
+            content: config.twitter_username,
+        },
+        {
+            property: "twitter:title",
+            content: "About - Amirhossein Fazli",
+        },
+        {
+            property: "twitter:description",
+            content: "Get more information about Amirhossein Fazli in the about page.",
+        },
+        {
+            property: "twitter:image",
+            content: "https://amirhossein-fzl-dev.ir/img/amir-developer.jpg",
+        },
+    ]
+});
 </script>
 
 <template>

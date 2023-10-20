@@ -2,6 +2,7 @@ import { test, expect, beforeEach, describe } from 'vitest';
 import { mount } from '@vue/test-utils';
 import App from '../src/App.vue';
 import { createPinia, setActivePinia } from 'pinia';
+import { createHead } from '@unhead/vue';
 import router from '../src/routes';
 import i18n from '../src/plugins/i18n';
 import Index from '../src/pages/index.vue';
@@ -11,9 +12,10 @@ import Portfolio from '@/pages/portfolio.vue';
 import Contact from '@/pages/contact.vue';
 
 const pinia = createPinia();
+const head = createHead();
 const wrapper = mount(App, {
     global: {
-        plugins: [pinia, i18n, router],
+        plugins: [pinia, head, i18n, router],
     },
 });
 

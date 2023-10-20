@@ -1,6 +1,84 @@
 <script setup lang="ts">
 import Profile from '@/components/sections/Profile.vue';
 import Info from '@/components/sections/Info.vue';
+import { useHead } from "@unhead/vue";
+import config from "@config";
+
+useHead({
+    title: "Amirhossein Fazli - Full-stack developer",
+    link: [
+        {
+            rel: "canonical",
+            href: config.url,
+        }
+    ],
+    meta: [
+        {
+            name: "title",
+            content: "Amirhossein Fazli - Full-stack developer"
+        },
+        {
+            name: "description",
+            content: "A Full-stack programmer and ready to implement your business idea!"
+        },
+        {
+            name: "keywords",
+            content: "Amirhossein,Fazli,امیرحسین,فضلی"
+        },
+        {
+            name: "robots",
+            content: "index, follow"
+        },
+
+        // OpenGraph meta tags
+        {
+            property: "og:title",
+            content: "Amirhossein Fazli - Full-stack developer",
+        },
+        {
+            property: "og:site_name",
+            content: "Amirhossein fazli personal site",
+        },
+        {
+            property: "og:url",
+            content: "https://amirhossein-fzl-dev.ir/",
+        },
+        {
+            property: "og:description",
+            content: "A Full-stack programmer and ready to implement your business idea!",
+        },
+        {
+            property: "og:type",
+            content: "website",
+        },
+        {
+            property: "og:image",
+            content: "https://amirhossein-fzl-dev.ir/img/amir-developer.jpg",
+        },
+
+        // Twitter card meta tags
+        {
+            property: "twitter:card",
+            content: "summary_large_image",
+        },
+        {
+            property: "twitter:site",
+            content: config.twitter_username,
+        },
+        {
+            property: "twitter:title",
+            content: "Amirhossein Fazli - Full-stack developer",
+        },
+        {
+            property: "twitter:description",
+            content: "A Full-stack programmer and ready to implement your business idea!",
+        },
+        {
+            property: "twitter:image",
+            content: "https://amirhossein-fzl-dev.ir/img/amir-developer.jpg",
+        },
+    ]
+});
 </script>
 
 <template>

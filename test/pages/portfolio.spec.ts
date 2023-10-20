@@ -1,5 +1,6 @@
 import { test, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
+import { createHead } from "@unhead/vue";
 import Portfolio from '@/pages/portfolio.vue';
 import i18n from '@/plugins/i18n';
 import Timeline from '@/components/Timeline.vue';
@@ -7,9 +8,10 @@ import TimelineItem from '@/components/TimelineItem.vue';
 import WithProfileLayout from '@/layouts/WithProfileLayout.vue';
 
 test('portfolio page test', async () => {
+    const head = createHead();
     const wrapper = mount(Portfolio, {
         global: {
-            plugins: [i18n],
+            plugins: [i18n, head],
         },
     });
 
