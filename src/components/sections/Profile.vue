@@ -7,6 +7,7 @@ import TelegramIcon from "@/assets/svg/icons/telegram.svg?raw";
 import XIcon from "@/assets/svg/socials/x.svg?raw";
 import { type Ref, ref } from "vue";
 import config from "@config";
+import DownloadIcon from "@/assets/svg/icons/download.svg?raw"
 
 const is_fullview: Ref<boolean> = ref(false);
 
@@ -44,6 +45,11 @@ const close_fullview_photo = () => is_fullview.value = false;
                     <Icon :icon="GithubIcon" class="tw" :size="28" stroke="" />
                 </a>
             </div>
+
+            <a class="download-btn" :href="config.resume_download_link">
+                <Icon :icon="DownloadIcon" :size="22" />
+                <span>{{ $t("download_resume") }}</span>
+            </a>
         </div>
 
         <!-- Fullview profile photo -->
@@ -116,5 +122,10 @@ const close_fullview_photo = () => is_fullview.value = false;
 
 .tw {
     @apply dark:text-white;
+}
+
+.download-btn {
+    @apply inline-flex items-center bg-blue-500 text-white px-6 py-2 rounded-2xl;
+    @apply font-semibold gap-2 mt-4 leading-[22px];
 }
 </style>
