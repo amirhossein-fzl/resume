@@ -113,7 +113,7 @@ const close_fullview_photo = () => is_fullview.value = false;
 }
 
 .fw-img {
-    @apply m-auto z-20 fixed w-96 h-auto inset-0;
+    @apply m-auto z-[1000] fixed w-96 h-auto inset-0 rounded-md;
 }
 
 .tw {
