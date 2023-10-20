@@ -112,6 +112,7 @@ onMounted(() => {
 }
 
 nav {
+    @apply ring-1 ring-slate-900/5 dark:ring-0 shadow-light;
     @apply bg-white shadow-light p-4 w-full rounded-xl;
     @apply flex justify-between items-center;
     @apply dark:bg-slate-800 dark:shadow-dark;

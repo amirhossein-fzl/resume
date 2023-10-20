@@ -54,7 +54,7 @@ const age = Math.floor(
 <style scoped lang="scss">
 .about-me {
     li {
-        @apply bg-slate-200 shadow-light;
+        @apply ring-1 ring-slate-900/5 dark:ring-0 shadow-light;
         @apply dark:bg-slate-800 dark:shadow-dark px-4 py-2 rounded-xl;
         @apply flex items-center;
 

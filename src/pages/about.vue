@@ -79,6 +79,6 @@ import Info from '@/components/sections/Info.vue';
 }
 .content {
     @apply dark:bg-slate-800 p-8 rounded-2xl mt-10 mx-4 sm:mx-0;
-    @apply dark:shadow-dark bg-slate-200 shadow-light;
+    @apply dark:shadow-dark ring-1 ring-slate-900/5 dark:ring-0 shadow-light;
 }
 </style>

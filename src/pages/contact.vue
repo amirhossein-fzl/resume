@@ -277,7 +277,7 @@ const submitForm = () => {
 
 .card {
     @apply dark:bg-slate-800 dark:shadow-dark rounded-2xl;
-    @apply bg-white shadow-light border border-slate-200 dark:border-none;
+    @apply ring-1 ring-slate-900/5 dark:ring-0 shadow-light;
 }
 
 .contact-img {
