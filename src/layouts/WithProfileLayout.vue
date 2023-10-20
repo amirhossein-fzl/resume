@@ -19,6 +19,6 @@ import Profile from '@/components/sections/Profile.vue';
     @apply flex flex-col gap-20;
 }
 .item {
-    @apply w-6/12 mx-auto;
+    @apply w-10/12 sm:w-8/12 mx-auto;
 }
 </style>
