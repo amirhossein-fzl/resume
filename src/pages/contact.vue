@@ -168,8 +168,7 @@ const submitForm = () => {
                                     <Icon :icon="InstagramIcon" />
                                 </a>
 
-                                <a :href="config.social_networks.linkedin" target="_blank"
-                                    class="in">
+                                <a :href="config.social_networks.linkedin" target="_blank" class="in">
                                     <Icon :icon="LinkedinIcon" />
                                 </a>
 
@@ -186,7 +185,8 @@ const submitForm = () => {
                     <div class="contact-form">
 
                         <Transition name="fly">
-                            <div class="alert" v-if="result.show">
+                            <div :class="['alert', { success: result.status == 'success', danger: result.status == 'error' }]"
+                                v-if="result.show">
                                 <div class="msg-wrapper">
                                     <div class="loading" v-if="result.status == 'loading'"></div>
 
@@ -388,6 +388,7 @@ const submitForm = () => {
 
     input {
         direction: ltr;
+
         &::placeholder {
             @apply rtl:text-right;
         }
@@ -416,7 +417,7 @@ const submitForm = () => {
 }
 
 .loading {
-    @apply animate-spin w-5 h-5 border-[3px] border-white;
+    @apply animate-spin min-w-[1.25rem] min-h-[1.25rem] border-[3px] border-white;
     @apply border-r-transparent rounded-full inline-block relative z-0;
 }
 
