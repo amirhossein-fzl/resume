@@ -4,7 +4,7 @@ import GithubIcon from "@/assets/svg/icons/github.svg?raw";
 import InstagramIcon from "@/assets/svg/icons/instagram.svg?raw";
 import LinkedinIcon from "@/assets/svg/icons/linkedin.svg?raw";
 import TelegramIcon from "@/assets/svg/icons/telegram.svg?raw";
-import TwitterIcon from "@/assets/svg/icons/twitter.svg?raw";
+import XIcon from "@/assets/svg/socials/x.svg?raw";
 import { type Ref, ref } from "vue";
 
 const is_fullview: Ref<boolean> = ref(false);
@@ -36,11 +36,11 @@ const close_fullview_photo = () => is_fullview.value = false;
                 </a>
 
                 <a href="https://twitter.com/amirhossein_fzl/" target="_blank">
-                    <Icon :icon="TwitterIcon" :size="28" stroke="" />
+                    <Icon :icon="XIcon" class="tw" :size="28" stroke="" />
                 </a>
 
                 <a href="https://github.com/amirhossein-fzl/" target="_blank">
-                    <Icon :icon="GithubIcon" :size="28" stroke="" />
+                    <Icon :icon="GithubIcon" class="tw" :size="28" stroke="" />
                 </a>
             </div>
         </div>
@@ -111,5 +111,9 @@ const close_fullview_photo = () => is_fullview.value = false;
 
 .fw-img {
     @apply m-auto z-20 fixed w-96 h-auto inset-0;
+}
+
+.tw {
+    @apply dark:text-white;
 }
 </style>

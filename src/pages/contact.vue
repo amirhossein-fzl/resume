@@ -6,7 +6,7 @@ import PhoneIcon from "@/assets/svg/icons/phone.svg?raw";
 import MailIcon from "@/assets/svg/icons/mail.svg?raw";
 import TelegramIcon from "@/assets/svg/socials/telegram.svg?raw";
 import InstagramIcon from "@/assets/svg/socials/instagram.svg?raw";
-import TwitterIcon from "@/assets/svg/socials/twitter.svg?raw";
+import XIcon from "@/assets/svg/socials/x.svg?raw";
 import LinkedinIcon from "@/assets/svg/socials/linkedin.svg?raw";
 import { type Ref, onMounted, ref, watch } from "vue";
 import { useTheme } from "@/stores/theme";
@@ -172,7 +172,7 @@ const submitForm = () => {
                                 </a>
 
                                 <a href="https://twitter.com/amirhossein_fzl/" target="_blank" class="tw">
-                                    <Icon :icon="TwitterIcon" />
+                                    <Icon :icon="XIcon" />
                                 </a>
                             </div>
                         </div>
