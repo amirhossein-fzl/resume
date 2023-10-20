@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils';
 import Info from '@/components/sections/Info.vue';
 import i18n from '@/plugins/i18n';
 
-test('Info component', async () => {
+test('Info component test', async () => {
     const wrapper = mount(Info, {
         global: {
             plugins: [i18n],

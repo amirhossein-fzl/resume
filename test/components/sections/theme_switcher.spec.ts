@@ -7,7 +7,7 @@ import SunIcon from '@/assets/svg/icons/brightness.svg?raw';
 import MoonIcon from '@/assets/svg/icons/moon-stars.svg?raw';
 import { useTheme } from '@/stores/theme';
 
-test('icon component', async () => {
+test('ThemeSwitcher component test', async () => {
     const pinia = createPinia();
 
     const wrapper = mount(ThemeSwitcher, {
@@ -34,7 +34,9 @@ test('icon component', async () => {
 
     expect(wrapper.findComponent(Icon).exists()).toBe(true);
     expect(wrapper.findComponent(Icon).props('size')).toEqual(28);
-    expect(wrapper.findComponent(Icon).element.classList.contains('icon')).toBe(true);
+    expect(wrapper.findComponent(Icon).element.classList.contains('icon')).toBe(
+        true
+    );
 
     await wrapper.findComponent(ThemeSwitcher).trigger('click');
 
@@ -42,11 +44,15 @@ test('icon component', async () => {
         expect(wrapper.findComponent(Icon).element.innerHTML).toEqual(
             light_icon
         );
-        expect(wrapper.findComponent(Icon).element.classList.contains('sc')).toBe(true);
+        expect(
+            wrapper.findComponent(Icon).element.classList.contains('sc')
+        ).toBe(true);
     } else {
         expect(wrapper.findComponent(Icon).element.innerHTML).toEqual(
             dark_icon
         );
-        expect(wrapper.findComponent(Icon).element.classList.contains('mc')).toBe(true);
+        expect(
+            wrapper.findComponent(Icon).element.classList.contains('mc')
+        ).toBe(true);
     }
 });

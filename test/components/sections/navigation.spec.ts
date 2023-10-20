@@ -7,7 +7,7 @@ import i18n from '@/plugins/i18n';
 import { createPinia } from 'pinia';
 import router from '@/routes';
 
-test('Navigation component', async () => {
+test('Navigation component test', async () => {
     const pinia = createPinia();
     const wrapper = mount(NavigationVue, {
         global: {

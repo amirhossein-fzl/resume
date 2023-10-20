@@ -18,16 +18,19 @@ test('Contact page test ...', async () => {
     });
 
     expect(wrapper.findComponent(WithProfileLayout).exists()).toBe(true);
-    expect(wrapper.find("h1.page-title").text()).toBe(i18n.global.t("contact_me"));
+    expect(wrapper.find('h1.page-title').text()).toBe(
+        i18n.global.t('contact_me')
+    );
     expect(wrapper.find('form').exists()).toBe(true);
     expect(wrapper.find('form').element.getAttribute('method')).toBe('post');
     expect(wrapper.find('form button[type="submit"]').exists()).toBe(true);
-    
-    await wrapper.find('form').trigger("submit");
 
-    wrapper.findAll("form input").forEach((input) => {
-        expect(input.element.classList.contains("invalid")).toBe(true);
+    await wrapper.find('form').trigger('submit');
+
+    wrapper.findAll('form input').forEach((input) => {
+        expect(input.element.classList.contains('invalid')).toBe(true);
     });
-    expect(wrapper.find('form textarea').element.classList.contains("invalid")).toBe(true);
-
+    expect(
+        wrapper.find('form textarea').element.classList.contains('invalid')
+    ).toBe(true);
 });
