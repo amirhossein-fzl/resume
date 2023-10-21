@@ -1,42 +1,42 @@
-import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
-import DefaultLayout from "@/layouts/DefaultLayout.vue";
-import Index from "@/pages/index.vue";
-import About from "@/pages/about.vue";
-import Skills from "@/pages/skills.vue";
-import Portfolio from "@/pages/portfolio.vue";
-import Contact from "@/pages/contact.vue";
+import {
+    type RouteRecordRaw,
+    createRouter,
+    createWebHistory,
+    createMemoryHistory,
+} from 'vue-router';
+import DefaultLayout from '@/layouts/DefaultLayout.vue';
 
 const routes: RouteRecordRaw[] = [
     {
-        path: "/",
+        path: '/',
         component: DefaultLayout,
         children: [
             {
-                path: "/",
-                component: Index
+                path: '/',
+                component: async () => await import('@/pages/index.vue'),
             },
             {
-                path: "/about",
-                component: About
+                path: '/about',
+                component: async () => await import('@/pages/about.vue'),
             },
             {
-                path: "/skills",
-                component: Skills
+                path: '/skills',
+                component: async () => await import('@/pages/skills.vue'),
             },
             {
-                path: "/portfolio",
-                component: Portfolio
+                path: '/portfolio',
+                component: async () => await import('@/pages/portfolio.vue'),
             },
             {
-                path: "/contact",
-                component: Contact
+                path: '/contact',
+                component: async () => await import('@/pages/contact.vue'),
             },
-        ]
+        ],
     },
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: import.meta.env.SSR ? createMemoryHistory() : createWebHistory(),
     routes,
 });
 
