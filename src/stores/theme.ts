@@ -1,9 +1,10 @@
 import { defineStore } from 'pinia';
+import config from '@config';
 
 export const useTheme = defineStore('theme', {
     state: () => ({
         value: import.meta.env.SSR
-            ? 'light'
+            ? config.theme_in_ssr
             : window.matchMedia('(prefers-color-scheme: dark)').matches
             ? 'dark'
             : 'light',
