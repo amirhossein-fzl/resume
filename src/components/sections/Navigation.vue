@@ -8,6 +8,7 @@ import { ref, onMounted, type Ref } from "vue";
 import CloseIcon from "@/assets/svg/icons/close.svg?raw";
 import config from "@config";
 import router from '@/routes';
+import ClientOnly from "@/components/ClientOnly.vue";
 
 const side_is_open: Ref<boolean> = ref(false);
 const nav_is_fixed: Ref<boolean> = ref(false);
@@ -64,7 +65,9 @@ onMounted(() => {
         </Transition>
         <!-- End Menu Siderbar -->
 
-        <LanguageSwitcher class="lang-sw" />
+        <ClientOnly>
+            <LanguageSwitcher class="lang-sw" />
+        </ClientOnly>
 
         <ul class="links">
             <li v-for="link in config.navigation_links">
@@ -72,7 +75,9 @@ onMounted(() => {
             </li>
         </ul>
 
-        <ThemeSwitcher />
+        <ClientOnly>
+            <ThemeSwitcher />
+        </ClientOnly>
     </nav>
 </template>
 
