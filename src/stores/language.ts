@@ -3,7 +3,7 @@ import { changeLanguage } from "@/core/language";
 
 export const useLanguage = defineStore("language", {
     state: () => ({
-        current: localStorage.getItem("lang"),
+        current: import.meta.env.SSR ? "en" : localStorage.getItem("lang"),
     }),
     getters: {
         getLanguage(state) {
