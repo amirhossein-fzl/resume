@@ -5,12 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "dev:ssr": "node server",
+    "build": "yarn build:client && yarn build:server",
+    "build:client": "vite build --ssrManifest .vite/ssr-manifest.json --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.js --outDir dist/server",
+    "serve": "NODE_ENV=production node server",
     "preview": "vite preview",
     "test": "vitest"
   },
   "dependencies": {
-    "@unhead/ssr": "^1.7.4",
     "@unhead/vue": "^1.7.4",
     "pinia": "^2.1.6",
     "vue": "^3.3.4",
@@ -18,13 +21,18 @@
     "vue-router": "4"
   },
   "devDependencies": {
+    "@unhead/ssr": "^1.7.4",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/test-utils": "^2.4.1",
     "autoprefixer": "^10.4.16",
+    "compression": "^1.7.4",
+    "crossenv": "^0.0.2-security",
     "cssnano": "^6.0.1",
+    "express": "^4.18.2",
     "happy-dom": "^12.9.1",
     "postcss": "^8.4.31",
     "sass": "^1.69.0",
+    "serve-static": "^1.15.0",
     "tailwindcss": "^3.3.3",
     "terser": "^5.22.0",
     "typescript": "^5.0.2",

@@ -32,7 +32,9 @@
         "src/**/*.tsx",
         "src/**/*.vue",
         "src/**/*.ts",
-        "test/**/*.ts"
+        "test/**/*.ts",
+        "src/entry-server.js",
+        "src/entry-client.js"
     ],
     "references": [{ "path": "./tsconfig.node.json" }]
 }
