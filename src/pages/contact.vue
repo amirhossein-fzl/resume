@@ -89,7 +89,7 @@ useHead({
 
 const theme = useTheme();
 // Contact form element
-let form: HTMLFormElement;
+let form: Ref<HTMLFormElement|undefined> = ref();
 const phone = config.contact.phone.replace(/\s/g, "");
 
 const form_values = ref({
@@ -148,7 +148,7 @@ const submitForm = () => {
     };
 
     // Contact html form element data
-    let form_data = new FormData(form);
+    let form_data = new FormData(form.value);
 
     let data = new URLSearchParams();
     // @ts-ignore
@@ -171,7 +171,7 @@ const submitForm = () => {
         result.value.status = "loading";
         result.value.message = "form_contact.result.loading";
 
-        fetch(form.action, {
+        fetch(import.meta.env.VITE_CONTACT_FORM_ACTION, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -181,7 +181,7 @@ const submitForm = () => {
             if (response.status == 200) {
                 result.value.status = 'success';
                 result.value.message = 'form_contact.result.success';
-                form.reset();
+                form.value?.reset();
             } else if (response.status == 400) {
                 let error_messages = Object.entries(
                     (await response.json()).messages
@@ -272,7 +272,7 @@ const submitForm = () => {
                             </div>
                         </Transition>
 
-                        <form action="https://puce-vivacious-butterfly.cyclic.app/contact" method="post" ref="form"
+                        <form method="post" ref="form"
                             @submit.prevent="submitForm">
                             <div class="field">
                                 <label for="name">{{ $t("name") }}</label>
