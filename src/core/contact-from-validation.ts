@@ -57,7 +57,7 @@ export class Validation extends ValidationMessages {
         this.data = contact_form;
 
         this.email_is_empty = this.is_empty(this.data.email);
-        this.phone_is_empty = this.is_empty(this.data.email);
+        this.phone_is_empty = this.is_empty(this.data.phone);
     }
 
     public is_empty(value: any): boolean {
@@ -102,7 +102,7 @@ export class Validation extends ValidationMessages {
     }
 
     private validate_email_or_phone(): void {
-        if (this.phone_is_empty && this.phone_is_empty) {
+        if (this.email_is_empty && this.phone_is_empty) {
             this.set_error(
                 'email_or_phone',
                 'validation_errors.email_or_phone'
@@ -136,6 +136,8 @@ export class Validation extends ValidationMessages {
     }
 
     public validate() {
+        this.email_is_empty = this.is_empty(this.data.email);
+        this.phone_is_empty = this.is_empty(this.data.phone);
         this.validate_name();
         this.validate_email_or_phone();
         this.validate_email();
