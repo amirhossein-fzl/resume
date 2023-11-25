@@ -144,7 +144,7 @@ const submitForm = () => {
     let unexpected_error = (): void => {
         result.value.show = true;
         result.value.status = "error";
-        result.value.message = "form-contact.result.unexpected";
+        result.value.message = "form_contact.result.unexpected";
     };
 
     // Contact html form element data
@@ -169,7 +169,7 @@ const submitForm = () => {
         // Form result alert show
         result.value.show = true;
         result.value.status = "loading";
-        result.value.message = "form-contact.result.unexpected";
+        result.value.message = "form_contact.result.loading";
 
         fetch(form.action, {
             method: 'POST',
@@ -180,7 +180,7 @@ const submitForm = () => {
         }).then(async (response) => {
             if (response.status == 200) {
                 result.value.status = 'success';
-                result.value.message = 'form-contact.result.success';
+                result.value.message = 'form_contact.result.success';
                 form.reset();
             } else if (response.status == 400) {
                 let error_messages = Object.entries(
