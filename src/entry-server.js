@@ -4,11 +4,17 @@ import { renderSSRHead } from '@unhead/ssr';
 import { createApp } from './main';
 
 export async function render(url, manifest) {
-    const { app, router, head } = createApp();
+    const { app, router, head, i18n } = createApp();
 
     // set the router to the desired URL before rendering
     await router.push(url);
     await router.isReady();
+
+    // Set locale
+    const locale = url.split("/")[1];
+    if (locale === "en" || locale === "fa") {
+        i18n.global.locale.value = locale;
+    }
 
     // passing SSR context object which will be available via useSSRContext()
     // @vitejs/plugin-vue injects code into a component's setup() that registers

@@ -9,7 +9,9 @@ import CloseIcon from "@/assets/svg/icons/close.svg?raw";
 import config from "@config";
 import router from '@/routes';
 import ClientOnly from "@/components/ClientOnly.vue";
+import { useLocale } from '@/stores/locale';
 
+const locale = useLocale();
 const side_is_open: Ref<boolean> = ref(false);
 const nav_is_fixed: Ref<boolean> = ref(false);
 // @ts-ignore
@@ -57,7 +59,7 @@ onMounted(() => {
 
                     <ul class="menu-links">
                         <li v-for="link in config.navigation_links">
-                            <RouterLink :to="link.link" exact-active-class="m-active">{{ $t(link.label) }}</RouterLink>
+                            <RouterLink :to="`/${locale.current + link.link}`" exact-active-class="m-active">{{ $t(link.label) }}</RouterLink>
                         </li>
                     </ul>
                 </div>
@@ -71,7 +73,7 @@ onMounted(() => {
 
         <ul class="links">
             <li v-for="link in config.navigation_links">
-                <RouterLink :to="link.link" exact-active-class="active">{{ $t(link.label) }}</RouterLink>
+                <RouterLink :to="`/${locale.current + link.link}`" exact-active-class="active">{{ $t(link.label) }}</RouterLink>
             </li>
         </ul>
 

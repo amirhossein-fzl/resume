@@ -4,6 +4,7 @@ import Profile from '@/components/sections/Profile.vue';
 import i18n from '@/plugins/i18n';
 
 test('Profile component test', async () => {
+    i18n.global.locale.value = "en";
     const wrapper = mount(Profile, {
         global: {
             plugins: [i18n],

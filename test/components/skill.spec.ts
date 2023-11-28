@@ -6,6 +6,7 @@ import Icon from '@/components/Icon.vue';
 import TypeScriptIcon from '@/assets/svg/icons/typescript.svg?raw';
 
 test('Skill component test', async () => {
+    i18n.global.locale.value = "en";
     const wrapper = mount(Skill, {
         global: {
             plugins: [i18n],

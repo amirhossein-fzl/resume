@@ -12,6 +12,7 @@ import Info from '@/components/sections/Info.vue';
 test('About page test', async () => {
     const pinia = createPinia();
     const head = createHead();
+    i18n.global.locale.value = "en";
     const wrapper = mount(About, {
         global: {
             plugins: [i18n, head, pinia, router],

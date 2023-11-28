@@ -1,20 +1,28 @@
-import { test, expect, describe } from 'vitest';
+import { test, expect, describe, beforeEach } from 'vitest';
 import { changeLanguage, loadLanguage } from '@/core/language';
+import { createPinia, setActivePinia } from 'pinia';
+import { useLocale } from '@/stores/locale';
 
-describe('core language test', () => {
+describe('core language test', async () => {
+    beforeEach(() => {
+        setActivePinia(createPinia())
+    })
+
     test('loadLanguage test', () => {
-        if (localStorage.getItem('lang') == null) {
-            loadLanguage();
-            expect(localStorage.getItem('lang')).toBe('en');
-        }
+        const locale = useLocale();
+        locale.current = "en";
+        loadLanguage();
 
-        const lang = loadLanguage();
-        expect(document.documentElement.dir == 'rtl').toBe(lang == 'fa');
-        expect(document.documentElement.dir == 'ltr').toBe(lang == 'en');
+        expect(document.documentElement.dir).equals("ltr");
+
+        locale.current = "fa";
+        loadLanguage();
+
+        expect(document.documentElement.dir).equals("rtl");
     });
 
-    test('changeLanguage test', () => {
-        let lang = changeLanguage('en');
+    test('changeLanguage test', async () => {
+        let lang = await changeLanguage('en');
 
         // localStorage language
         const ls_lang = localStorage.getItem('lang');
@@ -24,7 +32,7 @@ describe('core language test', () => {
         expect(document.documentElement.dir == 'ltr').toBe(lang == 'en');
 
         // to persian
-        lang = changeLanguage('fa');
+        lang = await changeLanguage('fa');
         expect(document.documentElement.dir == 'rtl').toBe(lang == 'fa');
     });
 });

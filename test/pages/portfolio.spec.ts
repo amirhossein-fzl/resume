@@ -9,6 +9,7 @@ import WithProfileLayout from '@/layouts/WithProfileLayout.vue';
 
 test('portfolio page test', async () => {
     const head = createHead();
+    i18n.global.locale.value = "en";
     const wrapper = mount(Portfolio, {
         global: {
             plugins: [i18n, head],

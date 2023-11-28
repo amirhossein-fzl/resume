@@ -7,11 +7,15 @@ import ChevronDownIcon from "@/assets/svg/icons/chevron-down.svg?raw";
 import USIcon from "@/assets/svg/flags/us.svg?raw";
 import IRIcon from "@/assets/svg/flags/ir.svg?raw";
 import { useLanguage } from "@/stores/language";
+import { useLocale } from "@/stores/locale";
 
 const items_is_open: Ref<boolean> = ref(false);
+const locale = useLocale();
+
 const language = useLanguage();
-const current_lang_label = computed(() => language.current == "en" ? "english" : "persian");
-const current_lang_icon = computed(() => language.current == "en" ? USIcon : IRIcon);
+const current_lang = computed(() => locale.current || language.current);
+const current_lang_label = computed(() => current_lang.value == "en" ? "english" : "persian");
+const current_lang_icon = computed(() => current_lang.value == "en" ? USIcon : IRIcon);
 const i18n = useI18n();
 
 let selectLanguage = (lang: "fa" | "en") => {

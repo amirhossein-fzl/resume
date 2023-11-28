@@ -9,6 +9,7 @@ import WithProfileLayout from '@/layouts/WithProfileLayout.vue';
 test('Contact page test ...', async () => {
     const pinia = createPinia();
     const head = createHead();
+    i18n.global.locale.value = "en";
     const wrapper = mount(Contact, {
         global: {
             plugins: [i18n, head, pinia],

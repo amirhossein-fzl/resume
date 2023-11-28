@@ -19,5 +19,6 @@ export const createApp = () => {
         app,
         router,
         head,
+        i18n,
     };
 };

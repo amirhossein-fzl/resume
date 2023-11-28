@@ -1,11 +1,11 @@
 import { defineStore } from 'pinia';
 import { changeLanguage } from '@/core/language';
-import config from '@config';
+import i18n from '@/plugins/i18n';
 
 export const useLanguage = defineStore('language', {
     state: () => ({
         current: import.meta.env.SSR
-            ? config.lang_in_ssr
+            ? i18n.global.locale
             : localStorage.getItem('lang'),
     }),
     getters: {
@@ -14,10 +14,10 @@ export const useLanguage = defineStore('language', {
         },
     },
     actions: {
-        changeTo(lang: string) {
+        async changeTo(lang: string) {
             this.current = lang;
             // @ts-ignore
-            changeLanguage(lang);
+            await changeLanguage(lang);
         },
     },
 });

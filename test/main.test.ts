@@ -23,18 +23,23 @@ describe('plugins test', () => {
     test('router test', async () => {
         await router.push('/');
         expect(wrapper.findComponent(Index).exists()).toBe(true);
+        expect(router.currentRoute.value.path).equals("/en/");
 
         await router.replace('/about');
         expect(wrapper.findComponent(About).exists()).toBe(true);
+        expect(router.currentRoute.value.path).equals("/en/about");
 
         await router.replace('/skills');
         expect(wrapper.findComponent(Skills).exists()).toBe(true);
+        expect(router.currentRoute.value.path).equals("/en/skills");
 
         await router.replace('/portfolio');
         expect(wrapper.findComponent(Portfolio).exists()).toBe(true);
+        expect(router.currentRoute.value.path).equals("/en/portfolio");
 
         await router.replace('/contact');
         expect(wrapper.findComponent(Contact).exists()).toBe(true);
+        expect(router.currentRoute.value.path).equals("/en/contact");
     });
 
     test('pinia stores test', async () => {

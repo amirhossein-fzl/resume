@@ -4,6 +4,7 @@ import Info from '@/components/sections/Info.vue';
 import i18n from '@/plugins/i18n';
 
 test('Info component test', async () => {
+    i18n.global.locale.value = "en";
     const wrapper = mount(Info, {
         global: {
             plugins: [i18n],

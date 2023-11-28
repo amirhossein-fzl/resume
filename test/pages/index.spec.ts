@@ -11,6 +11,7 @@ import Profile from "@/components/sections/Profile.vue";
 test("Me page test", async () => {
     const pinia = createPinia();
     const head = createHead();
+    i18n.global.locale.value = "en";
     const wrapper = mount(Index, {
         global: {
             plugins: [i18n, head, pinia, router]

@@ -1,6 +1,7 @@
-import config from "@config";
+import router from "@/routes";
+import { useLocale } from "@/stores/locale";
 
-export function changeLanguage(lang: "en" | "fa") {
+export async function changeLanguage(lang: "en" | "fa") {
     if (lang == "fa") {
         document.documentElement.dir = "rtl";
     } else {
@@ -8,17 +9,17 @@ export function changeLanguage(lang: "en" | "fa") {
     }
 
     localStorage.setItem("lang", lang);
+    const route = router.currentRoute.value;
+
+    await router.replace(`/${lang}/${route.path.split("/").slice(2).join("/")}`);
 
     return lang;
 }
 
 export function loadLanguage() {
-    let lang = localStorage.getItem("lang");
+    const locale = useLocale();
 
-    if (lang == null) {
-        localStorage.setItem("lang", config.lang_in_ssr);
-        lang = config.lang_in_ssr;
-    }
+    let lang = locale.current;
 
     if (lang == "fa") {
         document.documentElement.dir = "rtl";
