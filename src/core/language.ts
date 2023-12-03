@@ -26,6 +26,7 @@ export function loadLanguage() {
     } else {
         document.documentElement.dir = "ltr";
     }
+    document.documentElement.lang = lang;
 
     return lang;
 }

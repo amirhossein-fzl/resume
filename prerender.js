@@ -26,9 +26,10 @@ const routesToPrerender = fs
 (async () => {
     // pre-render each route...
     for (const url of routesToPrerender) {
-        const [appHtml, preloadLinks, head_payload] = await render(url, manifest);
+        const [appHtml, preloadLinks, head_payload, locale] = await render(url, manifest);
 
         const html = template
+            .replace(`LOCALE`, locale)
             .replace(`<!--preload-links-->`, preloadLinks)
             .replace(`<!--head-tags-->`, head_payload.headTags)
             .replace(`<!--main-app-->`, appHtml);

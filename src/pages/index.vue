@@ -3,9 +3,17 @@ import Profile from '@/components/sections/Profile.vue';
 import Info from '@/components/sections/Info.vue';
 import { useHead } from "@unhead/vue";
 import config from "@config";
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 useHead({
-    title: "Amirhossein Fazli - Full-stack developer",
+    templateParams: {
+    schemaOrg: {
+        host: import.meta.env.VITE_APP_URL,
+        }
+    },
+    title: t("seo.home.title"),
     link: [
         {
             rel: "canonical",
@@ -15,15 +23,15 @@ useHead({
     meta: [
         {
             name: "title",
-            content: "Amirhossein Fazli - Full-stack developer"
+            content: t("seo.home.title")
         },
         {
             name: "description",
-            content: "A Full-stack programmer and ready to implement your business idea!"
+            content: t("seo.home.description")
         },
         {
             name: "keywords",
-            content: "Amirhossein,Fazli,امیرحسین,فضلی"
+            content: t("seo.home.keywords")
         },
         {
             name: "robots",
@@ -33,11 +41,11 @@ useHead({
         // OpenGraph meta tags
         {
             property: "og:title",
-            content: "Amirhossein Fazli - Full-stack developer",
+            content: t("seo.home.title"),
         },
         {
             property: "og:site_name",
-            content: "Amirhossein fazli personal site",
+            content: t("seo.site_name"),
         },
         {
             property: "og:url",
@@ -45,7 +53,7 @@ useHead({
         },
         {
             property: "og:description",
-            content: "A Full-stack programmer and ready to implement your business idea!",
+            content: t("seo.home.description"),
         },
         {
             property: "og:type",
@@ -67,11 +75,11 @@ useHead({
         },
         {
             property: "twitter:title",
-            content: "Amirhossein Fazli - Full-stack developer",
+            content: t("seo.home.title"),
         },
         {
             property: "twitter:description",
-            content: "A Full-stack programmer and ready to implement your business idea!",
+            content: t("seo.home.description"),
         },
         {
             property: "twitter:image",
@@ -131,4 +139,5 @@ useHead({
     &-enter-to {
         animation: backInUp 0.5s ease;
     }
-}</style>
+}
+</style>

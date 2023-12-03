@@ -14,27 +14,30 @@ import { Validation } from "@/core/contact-from-validation";
 import type IResult from "@/core/types/contact_from/IResult";
 import config from "@config";
 import { useHead } from "@unhead/vue";
+import { useI18n } from "vue-i18n";
+
+const i18n = useI18n();
 
 useHead({
-    title: "Contact - Amirhossein Fazli",
+    title: i18n.t("seo.contact.title"),
     link: [
         {
             rel: "canonical",
-            href: `${config.url}/contact`,
+            href: `${config.url}/${i18n.locale.value}/contact`,
         }
     ],
     meta: [
         {
             name: "title",
-            content: "Contact - Amirhossein Fazli"
+            content: i18n.t("seo.contact.title")
         },
         {
             name: "description",
-            content: "Contact Amirhossein Fazli from our contact page."
+            content: i18n.t("seo.contact.description")
         },
         {
             name: "keywords",
-            content: "Amirhossein,Fazli,Contact,امیرحسین,فضلی,تماس باما"
+            content: i18n.t("seo.contact.keywords")
         },
         {
             name: "robots",
@@ -44,19 +47,19 @@ useHead({
         // OpenGraph meta tags
         {
             property: "og:title",
-            content: "Contact - Amirhossein Fazli",
+            content: i18n.t("seo.contact.title"),
         },
         {
             property: "og:site_name",
-            content: "Amirhossein fazli personal site",
+            content: i18n.t("seo.site_name"),
         },
         {
             property: "og:url",
-            content: `${config.url}/contact`,
+            content: `${config.url}/${i18n.locale.value}/contact`,
         },
         {
             property: "og:description",
-            content: "Contact Amirhossein Fazli from our contact page.",
+            content: i18n.t("seo.contact.description"),
         },
         {
             property: "og:type",
@@ -74,11 +77,11 @@ useHead({
         },
         {
             property: "twitter:title",
-            content: "Contact - Amirhossein Fazli",
+            content: i18n.t("seo.contact.title"),
         },
         {
             property: "twitter:description",
-            content: "Contact Amirhossein Fazli from our contact page.",
+            content: i18n.t("seo.contact.description"),
         },
         {
             property: "twitter:image",

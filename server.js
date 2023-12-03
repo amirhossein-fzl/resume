@@ -86,12 +86,13 @@ export async function createServer(
                 render = (await import('./dist/server/entry-server.js')).render;
             }
 
-            const [appHtml, preloadLinks, head_payload] = await render(
+            const [appHtml, preloadLinks, head_payload, locale] = await render(
                 url,
                 manifest
             );
 
             const html = template
+                .replace(`LOCALE`, locale)
                 .replace(`<!--preload-links-->`, preloadLinks)
                 .replace(`<!--head-tags-->`, head_payload.headTags)
                 .replace(`<!--main-app-->`, appHtml);

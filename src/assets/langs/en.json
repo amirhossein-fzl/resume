@@ -173,5 +173,33 @@
         "not_working": "Our contact form is not working at the moment ... contact us in other ways ..."
     },
     "footer": "©{year} Amirhossein Fazli | All rights reserved.",
-    "source": "source"
+    "source": "source",
+    "seo": {
+        "site_name": "Amirhossein Fazli personal site",
+        "home": {
+            "title": "Amirhossein Fazli - Full-stack developer",
+            "description": "I, Amirhossein Fazli, am a full stack programmer and I am ready to implement your business ideas!",
+            "keywords" : "Amirhossein,Fazli"
+        },
+        "about": {
+            "title": "About - Amirhossein Fazli",
+            "description": "Get more information about Amirhossein Fazli in the about page.",
+            "keywords" : "Amirhossein,Fazli,About"
+        },
+        "contact": {
+            "title": "Contact - Amirhossein Fazli",
+            "description": "Contact Amirhossein Fazli from our contact page.",
+            "keywords" : "Amirhossein,Fazli,Contact"
+        },
+        "portfolios": {
+            "title": "Portfolios - Amirhossein Fazli",
+            "description": "See the portfolio and activities of Amirhossein Fazli on the portfolio page.",
+            "keywords" : "Amirhossein,Fazli,Portfolio"
+        },
+        "skills": {
+            "title": "Skills - Amirhossein Fazli",
+            "description": "See the skills and skill level of Amirhossein Fazli on the skills page.",
+            "keywords" : "Amirhossein,Fazli,Skills"
+        }
+    }
 }

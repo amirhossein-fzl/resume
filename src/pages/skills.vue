@@ -24,27 +24,30 @@ import FlutterIcon from "@/assets/svg/icons/flutter.svg?raw";
 
 import { useHead } from "@unhead/vue";
 import config from "@config";
+import { useI18n } from "vue-i18n";
+
+const i18n = useI18n();
 
 useHead({
-    title: "Skills - Amirhossein Fazli",
+    title: i18n.t("seo.skills.title"),
     link: [
         {
             rel: "canonical",
-            href: `${config.url}/skills`,
+            href: `${config.url}/${i18n.locale.value}/skills`,
         }
     ],
     meta: [
         {
             name: "title",
-            content: "Skills - Amirhossein Fazli"
+            content: i18n.t("seo.skills.title")
         },
         {
             name: "description",
-            content: "See the skills and skill level of Amirhossein Fazli on the skills page."
+            content: i18n.t("seo.skills.description")
         },
         {
             name: "keywords",
-            content: "Amirhossein,Fazli,Skills,امیرحسین,فضلی,مهارت ها"
+            content: i18n.t("seo.skills.keywords")
         },
         {
             name: "robots",
@@ -54,19 +57,19 @@ useHead({
         // OpenGraph meta tags
         {
             property: "og:title",
-            content: "Skills - Amirhossein Fazli",
+            content: i18n.t("seo.skills.title"),
         },
         {
             property: "og:site_name",
-            content: "Amirhossein fazli personal site",
+            content: i18n.t("seo.site_name"),
         },
         {
             property: "og:url",
-            content: `${config.url}/skills`,
+            content: `${config.url}/${i18n.locale.value}/skills`,
         },
         {
             property: "og:description",
-            content: "See the skills and skill level of Amirhossein Fazli on the skills page.",
+            content: i18n.t("seo.skills.description"),
         },
         {
             property: "og:type",
@@ -88,11 +91,11 @@ useHead({
         },
         {
             property: "twitter:title",
-            content: "Skills - Amirhossein Fazli",
+            content: i18n.t("seo.skills.title"),
         },
         {
             property: "twitter:description",
-            content: "See the skills and skill level of Amirhossein Fazli on the skills page.",
+            content: i18n.t("seo.skills.description"),
         },
         {
             property: "twitter:image",

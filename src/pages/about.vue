@@ -3,27 +3,29 @@ import WithProfileLayout from '@/layouts/WithProfileLayout.vue';
 import Info from '@/components/sections/Info.vue';
 import { useHead } from "@unhead/vue";
 import config from "@config";
+import { useI18n } from 'vue-i18n';
+const i18n = useI18n();
 
 useHead({
-    title: "About - Amirhossein Fazli",
+    title: i18n.t("seo.about.title"),
     link: [
         {
             rel: "canonical",
-            href: `${config.url}/about`,
+            href: `${config.url}/${i18n.locale.value}/about`,
         }
     ],
     meta: [
         {
             name: "title",
-            content: "About - Amirhossein Fazli"
+            content: i18n.t("seo.about.title")
         },
         {
             name: "description",
-            content: "Get more information about Amirhossein Fazli in the about page."
+            content: i18n.t("seo.about.description")
         },
         {
             name: "keywords",
-            content: "Amirhossein,Fazli,About,امیرحسین,فضلی,درباره"
+            content: i18n.t("seo.about.keywords")
         },
         {
             name: "robots",
@@ -33,19 +35,19 @@ useHead({
         // OpenGraph meta tags
         {
             property: "og:title",
-            content: "About - Amirhossein Fazli",
+            content: i18n.t("seo.about.title"),
         },
         {
             property: "og:site_name",
-            content: "Amirhossein Fazli personal site",
+            content: i18n.t("seo.site_name"),
         },
         {
             property: "og:url",
-            content: `${config.url}/about`,
+            content: `${config.url}/${i18n.locale.value}/about`,
         },
         {
             property: "og:description",
-            content: "Get more information about Amirhossein Fazli in the about page.",
+            content: i18n.t("seo.about.description"),
         },
         {
             property: "og:type",
@@ -63,11 +65,11 @@ useHead({
         },
         {
             property: "twitter:title",
-            content: "About - Amirhossein Fazli",
+            content: i18n.t("seo.about.title"),
         },
         {
             property: "twitter:description",
-            content: "Get more information about Amirhossein Fazli in the about page.",
+            content: i18n.t("seo.about.description"),
         },
         {
             property: "twitter:image",

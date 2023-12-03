@@ -5,27 +5,30 @@ import TimelineItem from "@/components/TimelineItem.vue";
 import StudentCapIcon from "@/assets/svg/icons/student-cap.svg?raw";
 import { useHead } from "@unhead/vue";
 import config from "@config";
+import { useI18n } from "vue-i18n";
+
+const i18n = useI18n();
 
 useHead({
-    title: "Portfolios - Amirhossein Fazli",
+    title: i18n.t("seo.portfolios.title"),
     link: [
         {
             rel: "canonical",
-            href: `${config.url}/portfolio`,
+            href: `${config.url}/${i18n.locale.value}/portfolio`,
         }
     ],
     meta: [
         {
             name: "title",
-            content: "Portfolios - Amirhossein Fazli"
+            content: i18n.t("seo.portfolios.title")
         },
         {
             name: "description",
-            content: "See the portfolio and activities of Amirhossein Fazli on the portfolio page."
+            content: i18n.t("seo.portfolios.description")
         },
         {
             name: "keywords",
-            content: "Amirhossein,Fazli,Portfolio,امیرحسین,فضلی,نمونه کار"
+            content: i18n.t("seo.portfolios.keywords")
         },
         {
             name: "robots",
@@ -35,19 +38,19 @@ useHead({
         // OpenGraph meta tags
         {
             property: "og:title",
-            content: "Portfolios - Amirhossein Fazli",
+            content: i18n.t("seo.portfolios.title"),
         },
         {
             property: "og:site_name",
-            content: "Amirhossein fazli personal site",
+            content: i18n.t("seo.site_name"),
         },
         {
             property: "og:url",
-            content: `${config.url}/portfolio`,
+            content: `${config.url}/${i18n.locale.value}/portfolio`,
         },
         {
             property: "og:description",
-            content: "See the portfolio and activities of Amirhossein Fazli on the portfolio page.",
+            content: i18n.t("seo.portfolios.description"),
         },
         {
             property: "og:type",
@@ -69,11 +72,11 @@ useHead({
         },
         {
             property: "twitter:title",
-            content: "Portfolios - Amirhossein Fazli",
+            content: i18n.t("seo.portfolios.title"),
         },
         {
             property: "twitter:description",
-            content: "See the portfolio and activities of Amirhossein Fazli on the portfolio page.",
+            content: i18n.t("seo.portfolios.description"),
         },
         {
             property: "twitter:image",
