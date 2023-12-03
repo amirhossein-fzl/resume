@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import Navigation from "@sections/Navigation.vue";
 import { RouterView } from "vue-router";
+
+const current_year = new Date().getFullYear()
 </script>
 
 <template>
     <div class="container cty">
         <Navigation />
-        
+
         <div class="content">
             <RouterView v-slot="{ Component }">
                 <Transition name="page">
@@ -14,6 +16,11 @@ import { RouterView } from "vue-router";
                 </Transition>
             </RouterView>
         </div>
+
+        <footer>
+            <p>{{ $t("footer", { year: current_year }).replace("-", "|") }}</p>
+            <a href="https://github.com/amirhossein-fzl/resume">{{ $t("source") }}</a>
+        </footer>
     </div>
 </template>
 
@@ -40,6 +47,13 @@ import { RouterView } from "vue-router";
     &-enter-from,
     &-leave-to {
         @apply scale-75 opacity-0 h-0;
+    }
+}
+
+footer {
+    @apply flex gap-2 mt-10 mb-5 justify-center;
+    a {
+        @apply text-blue-500 underline;
     }
 }
 </style>
