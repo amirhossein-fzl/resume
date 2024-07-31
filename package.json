@@ -14,31 +14,31 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@unhead/vue": "^1.8.8",
-    "pinia": "^2.1.7",
-    "vue": "^3.3.9",
-    "vue-i18n": "^9.7.1",
-    "vue-router": "^4.2.5"
+    "@unhead/vue": "^1.9.16",
+    "pinia": "^2.2.0",
+    "vue": "^3.4.35",
+    "vue-i18n": "^9.13.1",
+    "vue-router": "^4.4.1"
   },
   "devDependencies": {
-    "@unhead/ssr": "^1.8.8",
-    "@vitejs/plugin-vue": "^4.5.0",
-    "@vue/test-utils": "^2.4.2",
-    "autoprefixer": "^10.4.16",
+    "@unhead/ssr": "^1.9.16",
+    "@vitejs/plugin-vue": "^4.6.2",
+    "@vue/test-utils": "^2.4.6",
+    "autoprefixer": "^10.4.19",
     "compression": "^1.7.4",
     "crossenv": "0.0.2-security",
-    "cssnano": "^6.0.1",
-    "express": "^4.18.2",
+    "cssnano": "^6.1.2",
+    "express": "^4.19.2",
     "happy-dom": "^12.10.3",
-    "postcss": "^8.4.31",
-    "sass": "^1.69.5",
+    "postcss": "^8.4.40",
+    "sass": "^1.77.8",
     "serve-static": "^1.15.0",
-    "tailwindcss": "^3.3.5",
-    "terser": "^5.24.0",
-    "typescript": "^5.3.2",
-    "vite": "^4.5.0",
+    "tailwindcss": "^3.4.7",
+    "terser": "^5.31.3",
+    "typescript": "^5.5.4",
+    "vite": "^4.5.3",
     "vite-plugin-vue-devtools": "1.0.0-rc.5",
     "vitest": "^0.34.6",
-    "vue-tsc": "^1.8.22"
+    "vue-tsc": "^1.8.27"
   }
 }
